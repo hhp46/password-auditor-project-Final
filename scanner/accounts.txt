@@ -1,5 +1,0 @@
-alice:Password
-bob:bobPass123!
-charlie:Linux1212!
-dan:dan121222
-harsh:Hapa12!!

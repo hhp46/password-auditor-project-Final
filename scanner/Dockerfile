@@ -2,9 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /scanner
 
+# Copy files from the doccker folder (build context)
 COPY password_auditor.py /scanner/password_auditor.py
-COPY accounts.txt /scanner/accounts.txt
 
-RUN mkdir -p /output
+
+
+RUN pip install argon2-cffi
+
+
 
 ENTRYPOINT ["python", "/scanner/password_auditor.py"]
