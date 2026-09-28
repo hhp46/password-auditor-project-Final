@@ -6,9 +6,7 @@ WORKDIR /scanner
 COPY password_auditor.py /scanner/password_auditor.py
 
 
-
 RUN pip install argon2-cffi
-
 
 
 ENTRYPOINT ["python", "/scanner/password_auditor.py"]

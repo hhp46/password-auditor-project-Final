@@ -8,83 +8,85 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 REPORT_PATH = "/output/password_report.html"
-VERSION_FILE = "/output/version.txt"
-
-
 ph = PasswordHasher()
 
 # -----------------------------
-# Password Strength Evaluation
+#  Password Evaluation RULES
 # -----------------------------
-def evaluate_password_strength(username, pwd):
-    requirements = []
-    pwd_lower = pwd.lower()
+
+def evaluate_password(username, passwd):
+    requirement = []
+    passwd_lower = passwd.lower()
     user_lower = username.lower()
 
-    if len(pwd) < 8 or len(pwd) > 14:
-        requirements.append("Password must be between 8 and 14 characters long")
+    if len(passwd) < 8 or len(passwd) > 14:
+        requirement.append("Password must be between 8 and 14 characters long")
 
-    if not any(c.isupper() for c in pwd):
-        requirements.append("Password must contain at least 1 uppercase letter")
+    if not any(c.isupper() for c in passwd):
+        requirement.append("Password must contain at least 1 uppercase letter")
 
-    if not any(c.islower() for c in pwd):
-        requirements.append("Password must contain at least 1 lowercase letter")
+    if not any(c.islower() for c in passwd):
+        requirement.append("Password must contain at least 1 lowercase letter")
 
-    if not any(c.isdigit() for c in pwd):
-        requirements.append("Password must contain at least 1 numeric digit")
+    if not any(c.isdigit() for c in passwd):
+        requirement.append("Password must contain at least 1 numeric digit")
 
-    if not re.search(r"[^A-Za-z0-9]", pwd):
-        requirements.append("Password must contain at least 1 special character")
+    if not re.search(r"[^A-Za-z0-9]", passwd):
+        requirement.append("Password must contain at least 1 special character")
 
-    if user_lower in pwd_lower:
-        requirements.append("Password cannot contain the username")
+    if user_lower in passwd_lower:
+        requirement.append("Password cannot contain the username")
 
-    if re.search(r"[A-Za-z]{5,}", pwd):
-        requirements.append("Password cannot contain more than 4 consecutive letters")
+    if re.search(r"[A-Za-z]{5,}", passwd):
+        requirement.append("Password cannot contain more than 4 consecutive letters")
 
-    if re.search(r"\d{5,}", pwd):
-        requirements.append("Password cannot contain more than 4 consecutive digits")
+    if re.search(r"\d{5,}", passwd):
+        requirement.append("Password cannot contain more than 4 consecutive digits")
 
-    if re.search(r"(.)\1\1", pwd):
-        requirements.append("Password cannot contain a character repeated more than twice in a row")
+    if re.search(r"(.)\1\1", passwd):
+        requirement.append("Password cannot contain a character repeated more than twice in a row")
 
-    is_strong = len(requirements) == 0
-    return is_strong, requirements
+    strong = len(requirement) == 0
+    return strong, requirement
 
 
 # -----------------------------
-# Build one table row
+#  Build first row for the table
 # -----------------------------
-def build_row(username, hashed_password, requirements):
-    if requirements:
-        weak_text = "YES"
-        weak_color = "background-color:#ff4d4d;"   # red
+
+def create_table(username, hashed_password, requirement):
+    if requirement:
+        w_text = "YES"
+        w_color = "background-color:#ff4d4d;"   # red
     else:
-        weak_text = "NO"
-        weak_color = "background-color:#4CAF50;"   # green
+        w_text = "NO"
+        w_color = "background-color:#4CAF50;"   # green
 
-    requirements_text = "<br>".join(requirements) if requirements else "None"
+    requirement_text = "<br>".join(requirement) if requirement else "None"
 
     return (
         f"<tr>"
         f"<td style='text-align:center;'>{username}</td>"
         f"<td style='text-align:center;'>{hashed_password}</td>"
-        f"<td style='text-align:center; {weak_color}'>{weak_text}</td>"
-        f"<td style='text-align:center;'>{requirements_text}</td>"
+        f"<td style='text-align:center; {w_color}'>{w_text}</td>"
+        f"<td style='text-align:center;'>{requirement_text}</td>"
         f"</tr>\n"
     )
 
 
 # -----------------------------
-# HTML Report Generator
+#  Generate a HTML Report
 # -----------------------------
-def generate_html_report(username, hashed_password, requirements):
-    timestamp = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
-    row_html = build_row(username, hashed_password, requirements)
+
+def HTML_REPORT(username, hashed_password, requirement):
+    timestamp = datetime.now(ZoneInfo("America/New_York")).strftime("%m-%d-%Y %H:%M")
+    row_html = create_table(username, hashed_password, requirement)
+
 
     # -----------------------------
-    # If report does NOT exist ? create new file
+    # If a HTML report does NOT exist create new HTML file
     # -----------------------------
+    
     if not os.path.exists(REPORT_PATH):
         with open(REPORT_PATH, "w") as f:
             f.write("<html><head><title>Password Audit Report</title></head><body>\n")
@@ -97,25 +99,29 @@ def generate_html_report(username, hashed_password, requirements):
                     "<th style='text-align:center;'>Username</th>"
                     "<th style='text-align:center;'>Hashed Password</th>"
                     "<th style='text-align:center;'>Weak Password?</th>"
-                    "<th style='text-align:center;'>Requirements Failing</th>"
+                    "<th style='text-align:center;'>requirement Failing</th>"
                     "</tr>\n")
             f.write(row_html)
             f.write("</table></body></html>\n")
         print(f"\nNew report created: {REPORT_PATH}")
         return
 
-    # -----------------------------
-    # Update timestamp every run
-    # -----------------------------
+
+# -----------------------------
+#  Update time on every run
+# -----------------------------
+
     with open(REPORT_PATH, "r") as f:
         content = f.read()
 
-    new_timestamp_line = f"<p>Generated: {timestamp} (EST)</p>"
+    new_timestamp_line = f"<p>Report Updated: {timestamp} (EST)</p>"
     content = re.sub(r"<p>Generated:.*?</p>", new_timestamp_line, content)
 
-    # -----------------------------
-    # Append new row before </table>
-    # -----------------------------
+
+# -----------------------------
+# Append new row before </table>
+# -----------------------------
+
     content = content.replace("</table>", row_html + "</table>")
 
     with open(REPORT_PATH, "w") as f:
@@ -124,24 +130,25 @@ def generate_html_report(username, hashed_password, requirements):
     print(f"\nReport updated: {REPORT_PATH}")
 
 
-# -----------------------------
-# Main Program
-# -----------------------------
+# -----------------------------------------
+#  Main Program - Inteactive via cmdline
+# -----------------------------------------
+
 def main():
     print("Auditing for a Secure Password")
 
     username = input("Enter your username: ").strip()
-    password = getpass("Enter your password (hidden): ").strip()
+    password = getpass("Enter your password (HIDDEN): ").strip()
 
-    is_strong, requirements = evaluate_password_strength(username, password)
+    strong, requirement = evaluate_password(username, password)
     hashed = ph.hash(password)
 
-    generate_html_report(username, hashed, requirements)
+    HTML_REPORT(username, hashed, requirement)
 
-    if not is_strong:
-        print("\nPassword is WEAK and logged.")
+    if not strong:
+        print("\nPassword is WEAK and must meet the complexity requirement. It is logged in the report.")
     else:
-        print("\nPassword is STRONG and logged.")
+        print("\nPassword meets the complexity requirement. It is logged in the report.")
 
 
 if __name__ == "__main__":
