@@ -8,7 +8,7 @@
 
 ---
 
-## **1. Overview**
+## **Overview**
 
 The Password Auditor checks password strength against defined complexity rules and generates an HTML report. It runs fully in Docker—no Python installation required.
 
@@ -21,7 +21,7 @@ Permission to mount volumes
 
 ---
 
-## **3. Project Structure**
+## **Project Structure**
 
 password-auditor-project/
 ├── output/
@@ -54,14 +54,14 @@ No character repeated 3+ times consecutively
 cd path/to/password-auditor-project
 docker build -t password-auditor ./scanner
 
-
+---
 ## Run the Auditor
 docker run --rm -v ${PWD}/output:/output password-auditor
 
-
+---
 You will be prompted for username and a hidden password input.
 
-
+---
 ## View Report
 Open:
 output/Password_Audit_Report.html
@@ -69,7 +69,7 @@ output/Password_Audit_Report.html
 Report includes: username, Argon2 hash, weak/strong status, failed rules, timestamp.
 The file updates/grows on each run.
 
-
+---
 ## Troubleshooting
 
 No report generated: Check volume mount
@@ -81,7 +81,7 @@ Permission errors: Run terminal as Admin or fix write permissions
 Build too fast (cached):
 docker build --no-cache -t password-auditor ./scanner
 
-
+---
 
 ## Best Practices
 
