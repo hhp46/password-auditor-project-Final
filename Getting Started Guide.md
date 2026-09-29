@@ -47,7 +47,7 @@ cd path/to/password-auditor-project
 RUN COMMAND...
 docker build -t password-auditor ./scanner
 
-* This command creates a Docker image for your project.
+**This command creates a Docker Image for the project.**
 
 
 Breakdown:
@@ -74,11 +74,10 @@ Docker looks inside this folder for:
 RUN COMMAND...
 docker run -it --rm -v ${PWD}/output:/output password-auditor
 
-* This command runs a container from the image built from above.
+**This command runs a container from the image built from above.**
 
 
 Breakdown:
-
 
 docker run
 Starts a new container instance.
