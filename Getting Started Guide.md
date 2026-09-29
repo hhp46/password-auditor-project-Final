@@ -161,14 +161,3 @@ Do **NOT** be inside the scanner or output directory.
 * Never share hashed passwords publicly
 
 ***
-
-## Best Practices
-
-* Use for onboarding user accounts or periodic password audits
-* Store reports securely
-* Address weak passwords promptly
-* Archive reports regularly
-* Never share hashed passwords publicly
-
-***
-
