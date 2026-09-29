@@ -48,7 +48,7 @@ If any requirement is NOT met, the password is marked **WEAK** and the failing r
 
 ## HTML Report
 
-The report is generated at: /output/password_report.html
+The report is generated at: /output/Password_Audit_Report.html
 
 
 Every time the docker is ran the results are added to the HTML report as a table containing:

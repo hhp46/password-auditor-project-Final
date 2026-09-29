@@ -7,7 +7,7 @@ from getpass import getpass
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-REPORT_PATH = "/output/password_report.html"
+REPORT_PATH = "/output/Password_Audit_Report.html"
 ph = PasswordHasher()
 
 # -----------------------------
@@ -127,7 +127,7 @@ def HTML_REPORT(username, hashed_password, requirement):
     with open(REPORT_PATH, "w") as f:
         f.write(content)
 
-    print(f"\nReport updated: {REPORT_PATH}")
+    print(f"\nReport updated at: {REPORT_PATH}")
 
 
 # -----------------------------------------
