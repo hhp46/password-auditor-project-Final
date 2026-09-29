@@ -18,7 +18,7 @@ The entire application runs inside a **Docker container**, ensuring consistent b
 
 # Project Structure
 
-<img width="308" height="158" alt="image" src="https://github.com/user-attachments/assets/90cdf58d-fa70-4ab5-9fd8-a8b3536d96bd" />
+
 
 ---
 
