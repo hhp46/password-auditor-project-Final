@@ -40,13 +40,15 @@ A password is **strong** only if it meets ALL:
 
 ```
 cd path/to/password-auditor-project
+
+run...
 docker build -t password-auditor ./scanner
 ```
 
 ## Run the Auditor
 
 ```
-docker run --rm -v ${PWD}/output:/output password-auditor
+docker run -it --rm -v ${PWD}/output:/output password-auditor
 ```
 
 You will be prompted for username and a hidden password input.
@@ -60,7 +62,7 @@ output/Password_Audit_Report.html
 ```
 
 Report includes: username, Argon2 hash, weak/strong status, failed rules, timestamp.  
-The file updates/grows on each run.
+The file updates on each run. If its first time running the auditor, it will generate a new HTML file.
 
 ## Troubleshooting
 
@@ -70,6 +72,7 @@ The file updates/grows on each run.
   ```
 * **Build too fast (cached):**
   ```
+  run this...
   docker build --no-cache -t password-auditor ./scanner
   ```
 
