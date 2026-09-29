@@ -1,145 +1,70 @@
+# Password Auditor – IT610 Midterm Project  
 
-# 📘 Password Auditor — IT610 Midterm Project  
-A Python‑based password auditing tool that evaluates user passwords against a strict enterprise‑grade policy.  
-This project was developed as part of the **IT610 – Security Administration** course at **NJIT**.
+Password auditing tool using Docker that evaluates password strength, enforces complexity rules, and generates an HTML report for security review.
+This project was developed for the **IT610 – Security Administration** course.
+---
+
+# Overview
+
+This project provides a command‑line password auditing utility designed for system administrators. 
+Users enter a username and password (which is hidden), and the tool:
+
+- Evaluates the password against strict complexity rules  
+- Hashes the password using **Argon2** (industry‑standard secure hashing)  
+- Logs the results into a growing **HTML report**  
+- Marks weak passwords and lists failed requirements  
+- Updates timestamps automatically on each run  
+
+The entire application runs inside a **Docker container**, ensuring consistent behavior across environments.
 
 ---
 
-## 🔍 Overview  
-The Password Auditor scans a list of username/password pairs and evaluates each password against a defined set of security rules.  
-It generates a detailed **HTML report** showing which passwords are weak and why.
 
-This project demonstrates secure coding practices, password policy enforcement, file parsing, reporting, and containerization using Docker.
+# Project Structure
+<img width="511" height="237" alt="image" src="https://github.com/user-attachments/assets/35a1760a-7b01-4e67-ac30-59afcdc446a0" />
 
----
 
-## 🛡️ Password Policy Rules  
-Each password is evaluated against the following rules:
 
-### **Length Requirements**
-- Minimum **8** characters  
-- Maximum **14** characters  
-
-### **Character Requirements**
-- At least **1 uppercase** letter  
-- At least **1 lowercase** letter  
-- At least **1 digit**  
-- At least **1 special character** (non‑alphanumeric)
-
-### **Restrictions**
-- Cannot contain the **username**  
-- Cannot contain **more than 4 consecutive letters**  
-- Cannot contain **more than 4 consecutive digits**  
-- Cannot repeat **any character more than twice** in a row  
 
 ---
 
-## 📁 Project Structure
+## Password Complexity Requirements
 
-```
-password-auditor-project_harshpatel_IT610/
-│
-├── scanner/
-│   └── password_auditor.py        # Main audit script
-│
-├── output/
-│   └── password_report.html       # Generated audit report
-│
-├── accounts.txt                   # Username/password input file
-├── Dockerfile                     # Containerized execution
-├── README.md                      # Project documentation
-└── MIDTERM_DOC.md                 # Midterm write-up
-```
+The password auditing tool checks for the following:
 
----
+1. Length between **8–14 characters**  
+2. At least **1 uppercase** letter  
+3. At least **1 lowercase** letter  
+4. At least **1 digit**  
+5. At least **1 special character**  
+6. Password cannot contain the username  
+7. No **5+ consecutive letters**  
+8. No **5+ consecutive digits**  
+9. No character repeated **3+ times** in a row  
 
-## ▶️ How to Run (Local)
-
-### **1. Ensure Python 3 is installed**
-
-Check version:
-
-```bash
-python --version
-```
-
-### **2. Run the auditor**
-
-From the project root:
-
-```bash
-python scanner/password_auditor.py
-```
-
-### **3. View the report**
-
-Open:
-
-```
-output/password_report.html
-```
+If any requirement is NOT met, the password is marked **WEAK** and the failing requirements are logged in a HTML report.
 
 ---
 
-## 🐳 Running with Docker
+## HTML Report
 
-### **1. Build the image**
+The report is generated at: /output/password_report.html
 
-```bash
-docker build -t password-auditor .
-```
 
-### **2. Run the container**
+Every time the docker is ran the results are added to the HTML report as a table containing:
 
-```bash
-docker run --rm -v ${PWD}/output:/output password-auditor
-```
+- Username
+- Hashed Password
+- Weak Password? (YES/NO)
+- Failed Requirements
 
-The report will appear in your local `output/` folder.
-
----
-
-## 📄 Input Format (accounts.txt)
-
-Each line must follow:
-
-```
-username:password
-```
-
-Example:
-
-```
-harsh:Adm12121!
-john:Welcome123!
-```
+  
+The report is automatically created if missing and updated on subsequent runs.
 
 ---
 
-## 📊 Output Report
 
-The generated HTML report includes:
-
-- Username  
-- Password  
-- Weak/Strong indicator  
-- Detailed reasons for failure  
-
-This makes it easy to identify which passwords violate policy and why.
-
----
-
-## 🧑‍💻 Technologies Used
-
-- **Python 3**
-- **Regex (re module)**
-- **HTML reporting**
-- **Docker**
-- **Git/GitHub**
-
----
-
-## 🎓 Author  
+# Author  
 **Harsh Patel**  
 IT610 – Security Administration  
 New Jersey Institute of Technology (NJIT)
