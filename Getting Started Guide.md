@@ -162,4 +162,13 @@ Do **NOT** be inside the scanner or output directory.
 
 ***
 
-If you want, I can also **optimize**, **shorten**, or **style** this README (add sections, badges, etc.).
+## Best Practices
+
+* Use for onboarding user accounts or periodic password audits
+* Store reports securely
+* Address weak passwords promptly
+* Archive reports regularly
+* Never share hashed passwords publicly
+
+***
+
