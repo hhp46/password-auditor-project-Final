@@ -49,26 +49,26 @@ A password is **VALID** only if it meets **ALL** the requirements below:
 
 ## Build the Docker Image
 
+Navigate into the folder that contains the Dockerfile. In this case its inside the /scanner folder.
 ```
 cd path/to/password-auditor-project/scanner    (CHANGE YOUR PATH ACCORDINGLY)
 
+Build the image:
 docker build -t password-auditor .
 ```
 
-This command creates a Docker image for the project.
 
 ***
 
-## Run the Auditor
+## Run the Auditor inside the container
 
 ```
 docker run -it --entrypoint bash -v ${PWD}/output:/output password-auditor
 
 ```
 
-*This command runs a container from the image built above.*
+Once inside the container, run the auditor:
 
-When inside the container run the script manually
 python /scanner/password_auditor.py
 
 Enter username/password when prompted
@@ -76,15 +76,8 @@ Enter username/password when prompted
 Report will save to /output (mounted to your Windows folder)
 
 
-
-  This allows the report file generated inside the container to appear on your PC.
-
-
-
-You will be prompted to enter a username and a password which will be hidden on the screen.
-
-
 Exit the container
+
 When you're done, exit the shell to stop the container.
 
 Inside the container:
