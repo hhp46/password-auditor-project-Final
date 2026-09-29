@@ -23,7 +23,7 @@ FYI... No additional Python installation is required.
       ├── Dockerfile
       └── password_auditor.py
   ```
-The output directory and the Password_Audit_Report.html file will be automatically generated once the container is built and ran successfully. 
+The output directory and the Password_Audit_Report.html file will be automatically generated once the Docker Image is built and ran successfully. 
 
 ## Password Rules
 
