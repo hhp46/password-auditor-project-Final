@@ -108,7 +108,7 @@ docker run -it --rm -v ${PWD}/output:/output password-auditor
 * **password-auditor**  
   The name of the image created previously.
 
-You will be prompted for username and a hidden password input.
+You will be prompted to enter a username and a password which will be hidden on the screen.
 
 ***
 
@@ -120,7 +120,7 @@ Open:
 output/Password_Audit_Report.html
 ```
 
-The report includes:
+The report will include the following:
 
 * Username
 * Argon2 hashed password
@@ -132,7 +132,7 @@ The file updates on each run. On the first run, a new HTML file is generated.
 
 ***
 
-## Troubleshooting
+## Troubleshooting Tips
 
 
 * **No report generated:** Check volume mount
