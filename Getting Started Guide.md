@@ -10,7 +10,7 @@
 
 ## Overview
 
-The Password Auditor checks password strength against several defined complexity rules based on **NJ State SISM Policy**, then generates an HTML report.  
+The Password Auditor checks password strength against several defined complexity rules based on **NJ State SISM Policy** which i have used for the project, then generates an HTML report.  
 It runs fully in Docker — *no Python installation required.*
 
 ***
@@ -31,13 +31,13 @@ password-auditor-project/
     └── password_auditor.py
 ```
 
-The `output` directory and the `Password_Audit_Report.html` file will be automatically generated once the Docker image is built and run successfully.
+The `output` directory and the `Password_Audit_Report.html` file will be automatically generated once the Docker image is built and ran successfully.
 
 ***
 
 ## Password Rules
 
-A password is **VALID** only if it meets **ALL** the requirements:
+A password is **VALID** only if it meets **ALL** the requirements below:
 
 * 8–14 characters
 * At least one uppercase
@@ -56,6 +56,7 @@ A password is **VALID** only if it meets **ALL** the requirements:
 ```
 cd path/to/password-auditor-project
 
+COMMAND TO RUN...
 docker build -t password-auditor ./scanner
 ```
 
@@ -82,6 +83,7 @@ Docker looks inside this folder for:
 ## Run the Auditor
 
 ```
+COMMAND TO RUN...
 docker run -it --rm -v ${PWD}/output:/output password-auditor
 ```
 
@@ -103,7 +105,7 @@ docker run -it --rm -v ${PWD}/output:/output password-auditor
 * **-v ${PWD}/output:/output**  
   Volume mount linking your local `output` folder to the container’s `/output` directory.
 
-  This allows the report file generated inside the container to appear on your machine.
+  This allows the report file generated inside the container to appear on your PC.
 
 * **password-auditor**  
   The name of the image created previously.
