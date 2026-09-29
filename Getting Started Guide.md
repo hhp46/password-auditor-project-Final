@@ -24,7 +24,7 @@ It runs fully in Docker — *no Python installation required.*
 
 ```
 password-auditor-project/
-├── output/
+├── output/                          (Automatically Generated)
 │   ├── Password_Audit_Report.html   (Automatically Generated)
 └── scanner/
     ├── Dockerfile
@@ -75,7 +75,7 @@ docker build -t password-auditor ./scanner
 Docker looks inside this folder for:
 
 * **Dockerfile**
-* **password\_auditor.py** (copied into the image)
+* **password\_auditor.py**
 
 ***
 
@@ -150,14 +150,14 @@ The file updates on each run. On the first run, a new HTML file is generated.
 
   path/to/password-auditor-project
 
-  Do NOT be inside the scanner or output directory.
+  Do NOT run the commands from inside the scanner or output directory. It will NOT work. 
 
   ```
 ***
 
 ## Best Practices
 
-* Use for onboarding user accounts or periodic password audits
+* Use for onboarding user accounts and/or for periodic password audits
 * Store reports securely
 * Address weak passwords promptly
 * Archive reports regularly
