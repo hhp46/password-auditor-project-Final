@@ -21,34 +21,8 @@ Permission to mount volumes
 
 ---
 
-# **GETTING STARTED GUIDE – PASSWORD AUDITING**  
 
-
-**Author:** Harsh Patel  
-**Course:** IT610 – NJIT  
-**Project:** Docker-Based Password Auditor
-
----
-
-## **Overview**
-
-The Password Auditor checks password strength against defined complexity rules and generates an HTML report. It runs fully in Docker—no Python installation required.
-
----
-## Requirements
-
-Docker Desktop (Windows/macOS/Linux)
-Terminal/Powershell access
-Permission to mount volumes
-
----
-
-
-
-
-
-
-## **Project Structure**
+## Project Structure
 
 password-auditor-project/
 ├── output/
@@ -59,6 +33,8 @@ password-auditor-project/
 ```
 
 The `output/` directory is used to store the generated HTML report.
+
+
 
 ---
 ## Password Rules
