@@ -147,8 +147,8 @@ The file updates on each run. On the first run, a new HTML file is generated.
   ```
   Make sure your inside the correct working directory when running the Docker commands. 
   path/to/password-auditor-project
+A password is **VALID** only if it meets **ALL** the requirements below:
 
-  A password is **VALID** only if it meets **ALL** the requirements below:
   Do NOT be inside the scanner directory. 
   ```
 ***
