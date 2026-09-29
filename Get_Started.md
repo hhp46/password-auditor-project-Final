@@ -1,12 +1,13 @@
 # GETTING STARTED GUIDE – PASSWORD AUDITING
 
 **Author:** Harsh Patel  
-**Course:** IT610 – NJIT  
+**Course:** IT610:851 – NJIT  
 **Project:** Docker-Based Password Auditor
 
 ## Overview
 
-The Password Auditor checks password strength against defined complexity rules and generates an HTML report. It runs fully in Docker—no Python installation required.
+The Password Auditor checks password strength against several defined complexity rules based on NJ STATE SISM POLICY and generates an HTML report. It runs fully in Docker. 
+No Python installation required.
 
 ## Requirements
 
