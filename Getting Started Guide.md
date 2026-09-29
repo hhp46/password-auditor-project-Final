@@ -54,7 +54,7 @@ A password is **VALID** only if it meets **ALL** the requirements below:
 ## Build the Docker Image
 
 ```
-cd path/to/password-auditor-project
+cd path/to/password-auditor-project     (CHANGE YOUR PATH ACCORDINGLY)
 
 docker build -t password-auditor ./scanner
 ```
