@@ -161,3 +161,29 @@ Do **NOT** be inside the scanner or output directory.
 * Never share hashed passwords publicly
 
 ***
+
+
+Here is a **fixed Best Practices section** matching the same style as your Troubleshooting section — bullet points, spacing, and clean formatting.
+
+Just **copy + paste** this into your GitHub README.md:
+
+***
+
+## Best Practices
+
+* **Use during onboarding or periodic password audits**  
+  Helps ensure new accounts follow password standards from the start.
+
+* **Store reports securely**  
+  HTML reports contain sensitive hashed credentials and audit results.
+
+* **Address weak passwords promptly**  
+  Review and remediate accounts flagged as non‑compliant.
+
+* **Archive reports regularly**  
+  Keep records of password strength over time for internal audit requirements.
+
+* **Never share hashed passwords publicly**  
+  Even though they are hashed, they must still be protected.
+
+***
