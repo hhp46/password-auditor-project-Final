@@ -74,7 +74,7 @@ Docker looks inside this folder for:
 RUN COMMAND...
 docker run -it --rm -v ${PWD}/output:/output password-auditor
 
-**This command runs a container from the image built from above.**
+*This command runs a container from the image built from above.*
 
 
 Breakdown:
