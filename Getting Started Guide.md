@@ -140,7 +140,7 @@ The file updates on each run. On the first run, a new HTML file is generated.
   -v ${PWD}/output:/output
   ```
 
-* **Build too fast (cached):**
+* **Build too fast (cached)??:**
   ```
   docker build --no-cache -t password-auditor ./scanner
   ```
