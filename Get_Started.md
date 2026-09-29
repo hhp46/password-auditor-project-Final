@@ -23,11 +23,11 @@ FYI... No additional Python installation is required.
       ├── Dockerfile
       └── password_auditor.py
   ```
-The output directory and the Password_Audit_Report.html file will be automatically generated once the container is built and run successfully. 
+The output directory and the Password_Audit_Report.html file will be automatically generated once the container is built and ran successfully. 
 
 ## Password Rules
 
-A password is **strong** only if it meets ALL:
+A password is **VALID** only if it meets ALL the requirements:
 
 * 8–14 characters
 * At least one uppercase
@@ -64,7 +64,7 @@ Open:
 output/Password_Audit_Report.html
 ```
 
-Report includes: username, Argon2 hash, weak/strong status, failed rules, timestamp.  
+Report includes: username, Argon2 hash, weak/strong status, failed rules, timestamp for when the report was generated/updated.  
 The file updates on each run. If its first time running the auditor, it will generate a new HTML file.
 
 ## Troubleshooting
@@ -79,9 +79,9 @@ The file updates on each run. If its first time running the auditor, it will gen
   docker build --no-cache -t password-auditor ./scanner
   ```
 
-## Best Practices
+## Best Practices to Keep
 
-* Use for onboarding or periodic audits
+* Use for onboarding user accounts or periodic password audits
 * Store reports securely
 * Address weak passwords promptly
 * Archive reports regularly
