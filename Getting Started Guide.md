@@ -44,7 +44,7 @@ A password is **VALID** only if it meets ALL the requirements:
 ```
 cd path/to/password-auditor-project
 
-run...
+RUN COMMAND...
 docker build -t password-auditor ./scanner
 
 * This command creates a Docker image for your project.
@@ -71,6 +71,7 @@ Docker looks inside this folder for:
 ## Run the Auditor
 
 ```
+RUN COMMAND...
 docker run -it --rm -v ${PWD}/output:/output password-auditor
 
 * This command runs a container from the image built from above.
