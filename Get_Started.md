@@ -1,4 +1,4 @@
-# Password Auditor – Getting Started
+# GETTING STARTED GUIDE – PASSWORD AUDITING
 
 **Author:** Harsh Patel  
 **Course:** IT610 – NJIT  
