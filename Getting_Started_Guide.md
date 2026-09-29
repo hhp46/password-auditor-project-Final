@@ -154,13 +154,6 @@ Force rebuild using:
 docker build --no-cache -t password-auditor ./scanner
 ```
 
-### **Git Push Rejected**
-Pull remote changes first:
-
-```bash
-git pull origin main --allow-unrelated-histories
-```
-
 ---
 
 ## **9. Best Practices for Administrators**
