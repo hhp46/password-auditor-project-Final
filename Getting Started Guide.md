@@ -134,6 +134,7 @@ The file updates on each run. On the first run, a new HTML file is generated.
 
 ## Troubleshooting
 
+
 * **No report generated:** Check volume mount
   ```
   -v ${PWD}/output:/output
@@ -145,9 +146,9 @@ The file updates on each run. On the first run, a new HTML file is generated.
   ```
 * **Things to remember:**
   ```
-  Make sure your inside the correct working directory when running the Docker commands. 
+  Make sure your inside the correct working directory when running the Docker commands.
   path/to/password-auditor-project
-Do **NOT** be inside the scanner or output directory.
+  Do **NOT** be inside the scanner or output directory.
 
   ```
 ***
@@ -159,31 +160,5 @@ Do **NOT** be inside the scanner or output directory.
 * Address weak passwords promptly
 * Archive reports regularly
 * Never share hashed passwords publicly
-
-***
-
-
-Here is a **fixed Best Practices section** matching the same style as your Troubleshooting section — bullet points, spacing, and clean formatting.
-
-Just **copy + paste** this into your GitHub README.md:
-
-***
-
-## Best Practices
-
-* **Use during onboarding or periodic password audits**  
-  Helps ensure new accounts follow password standards from the start.
-
-* **Store reports securely**  
-  HTML reports contain sensitive hashed credentials and audit results.
-
-* **Address weak passwords promptly**  
-  Review and remediate accounts flagged as non‑compliant.
-
-* **Archive reports regularly**  
-  Keep records of password strength over time for internal audit requirements.
-
-* **Never share hashed passwords publicly**  
-  Even though they are hashed, they must still be protected.
 
 ***
