@@ -24,6 +24,8 @@ Permission to mount volumes
 
 ## Project Structure
 
+<img width="308" height="158" alt="image" src="https://github.com/user-attachments/assets/31c7cd5f-78a8-4830-977c-4b5e436c88b2" />
+
 password-auditor-project/
 ├── output/
 └── scanner/
@@ -34,10 +36,9 @@ password-auditor-project/
 
 The `output/` directory is used to store the generated HTML report.
 
-
-
 ---
-## Password Rules
+
+## **Password Rules**
 A password is strong only if it meets ALL:
 
 8–14 characters
