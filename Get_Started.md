@@ -18,10 +18,12 @@ FYI... No additional Python installation is required.
   ```
   password-auditor-project/
   ├── output/
+      ├── Password_Audit_Report.html   (Automatically Generated)
   └── scanner/
       ├── Dockerfile
       └── password_auditor.py
   ```
+The output directory and the Password_Audit_Report.html file will be automatically generated once the container is built and run successfully. 
 
 ## Password Rules
 
