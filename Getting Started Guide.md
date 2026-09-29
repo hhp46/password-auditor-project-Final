@@ -55,8 +55,7 @@ cd path/to/password-auditor-project/scanner    (CHANGE YOUR PATH ACCORDINGLY)
 docker build -t password-auditor .
 ```
 
-**This command creates a Docker image for the project.**
-
+This command creates a Docker image for the project.
 
 ***
 
