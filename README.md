@@ -1,7 +1,7 @@
 # Password Auditor – IT610 Midterm Project  
 
 Password auditing tool using Docker that evaluates password strength, enforces complexity rules, and generates an HTML report for security review.
-This project was developed for the **IT610 – Security Administration** course.
+
 ---
 
 # Overview
