@@ -68,7 +68,6 @@ The file updates/grows on each run.
   ```
   -v ${PWD}/output:/output
   ```
-* **Permission errors:** Run terminal as Admin or fix write permissions
 * **Build too fast (cached):**
   ```
   docker build --no-cache -t password-auditor ./scanner
