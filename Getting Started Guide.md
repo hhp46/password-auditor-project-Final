@@ -47,6 +47,9 @@ cd path/to/password-auditor-project
 run...
 docker build -t password-auditor ./scanner
 
+* This command creates a Docker image for your project.
+
+
 Breakdown:
 
 docker build
@@ -69,6 +72,45 @@ Docker looks inside this folder for:
 
 ```
 docker run -it --rm -v ${PWD}/output:/output password-auditor
+
+* This command runs a container from the image built from above.
+
+
+Breakdown:
+
+
+docker run
+Starts a new container instance.
+
+
+-it
+Combines:
+
+  - -i = interactive mode 
+  - -t = terminal mode
+
+Together, this allows the script to prompt for a username/password.
+
+
+--rm
+When the container exits, Docker automatically deletes it.
+No leftover containers will clutter your system.
+
+
+-v ${PWD}/output:/output
+Volume mount: links a local folder to a folder inside the container.
+Meaning:
+  - ${PWD}/output = output folder on your PC
+  - /output = folder inside the container
+
+This lets the script write Password_Audit_Report.html inside the container, and it appears in your real local output directory.
+
+
+password-auditor
+The name of the image created by the build command.
+Docker launches this image.
+
+
 ```
 
 You will be prompted for username and a hidden password input.
