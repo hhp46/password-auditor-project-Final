@@ -117,7 +117,7 @@ The file updates on each run. On the first run, a new HTML file is generated.
 
 * **Build too fast (cached)??:**
   ```
-  docker build --no-cache -t password-auditor ./scanner
+  docker build --no-cache -t password-auditor .
   ```
 * **Things to remember:**
   ```
