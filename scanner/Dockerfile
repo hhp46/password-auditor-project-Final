@@ -10,3 +10,4 @@ RUN pip install argon2-cffi
 
 
 ENTRYPOINT ["python", "/scanner/password_auditor.py"]
+CMD ["bash"]
