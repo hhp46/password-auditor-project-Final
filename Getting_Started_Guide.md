@@ -1,326 +1,174 @@
-**Getting Started Guide – Password Auditor**
+
+# **GETTING STARTED GUIDE – PASSWORD AUDIT**  
 
 
+**Author:** Harsh Patel  
+**Course:** IT610 – NJIT  
+**Project:** Password Auditor (Docker-Based)
 
+---
 
+## **1. Introduction**
 
-\# \*\*Getting Started Guide – Password Auditor\*\*
+The Password Auditor is a lightweight security assessment tool designed for system administrators, IT auditors, and security teams. It evaluates password strength using a defined set of complexity rules and generates an HTML report containing audit results. The tool runs entirely inside a Docker container, ensuring consistent behavior across different environments.
 
+This guide provides step‑by‑step instructions for installing, running, and using the Password Auditor.
 
+---
 
-\## \*\*1. Introduction\*\*
+## **2. System Requirements**
 
+To use the Password Auditor, ensure the following prerequisites are met:
 
+- **Docker Desktop** installed (Windows, macOS, or Linux)
+- Ability to run terminal or PowerShell commands
+- Permission to mount local directories
+- Access to the project folder containing:
+  - `scanner/password_auditor.py`
+  - `scanner/Dockerfile`
+  - `output/` directory
 
-The Password Auditor is a lightweight security tool designed to help system administrators and users evaluate password strength and enforce organizational complexity requirements. The tool runs inside a Docker container and generates an HTML report that logs each password audit, including failed requirements and secure Argon2 password hashes.
+No Python installation is required on the host system.
 
+---
 
+## **3. Project Directory Structure**
 
-This guide explains how to install, run, and use the Password Auditor.
-
-
-
-\---
-
-
-
-\## \*\*2. System Requirements\*\*
-
-
-
-To use the Password Auditor, you need:
-
-
-
-\- \*\*Docker\*\* installed on your system  
-
-\- Ability to run terminal commands  
-
-\- Permission to mount local directories  
-
-\- Access to the project folder containing:
-
-&#x20; - `scanner/password\_auditor.py`
-
-&#x20; - `scanner/Dockerfile`
-
-&#x20; - `output/` directory (for the HTML report)
-
-
-
-No Python installation is required — all dependencies run inside the container.
-
-
-
-\---
-
-
-
-\## \*\*3. Project Directory Structure\*\*
-
-
-
-Your project should look like this:
-
-
+Your project folder should contain the following structure:
 
 ```
-
 password-auditor-project/
-
 │
-
 ├── output/
-
-│     Password\_Audit\_Report.html     (generated automatically)
-
+│     Password_Audit_Report.html        (generated automatically)
 │
-
 └── scanner/
-
-&#x20;     Dockerfile
-
-&#x20;     password\_auditor.py
-
+      Dockerfile
+      password_auditor.py
 ```
 
+The `output/` directory is used to store the generated HTML report.
 
+---
 
-The `output/` folder will store the generated HTML report.
+## **4. Password Complexity Requirements**
 
+The Password Auditor evaluates passwords using the following rules:
 
+1. Length must be **8–14 characters**
+2. Must contain **at least one uppercase** letter
+3. Must contain **at least one lowercase** letter
+4. Must contain **at least one digit**
+5. Must contain **at least one special character**
+6. Password **cannot contain the username**
+7. No **5 or more consecutive letters**
+8. No **5 or more consecutive digits**
+9. No character repeated **three or more times** consecutively
 
-\---
+Passwords failing any rule are marked **WEAK** and logged accordingly.
 
+---
 
+## **5. Building the Docker Image**
 
-\## \*\*4. Building the Docker Image\*\*
+1. Open a terminal or PowerShell window.
+2. Navigate to the project root directory:
 
+   ```bash
+   cd path/to/password-auditor-project
+   ```
 
+3. Build the Docker image using the Dockerfile inside the `scanner` directory:
 
-Open a terminal and navigate to the project root directory.
+   ```bash
+   docker build -t password-auditor ./scanner
+   ```
 
+This command creates a Docker image named **password-auditor**.
 
+---
 
-Run the following command to build the Docker image:
+## **6. Running the Password Auditor**
 
-
-
-```bash
-
-docker build -t password-auditor ./scanner
-
-```
-
-
-
-This command:
-
-
-
-\- Uses the Dockerfile inside `/scanner`
-
-\- Installs Python 3.11 and Argon2 hashing library
-
-\- Packages the password auditor script into a runnable container
-
-
-
-\---
-
-
-
-\## \*\*5. Running the Password Auditor\*\*
-
-
-
-Use the following command to run the tool:
-
-
+Run the following command:
 
 ```bash
-
 docker run --rm -v ${PWD}/output:/output password-auditor
-
 ```
-
-
 
 Explanation:
 
+- `--rm` removes the container after execution  
+- `-v ${PWD}/output:/output` mounts your local `output/` folder into the container  
+- `password-auditor` is the image built in the previous step  
 
-
-\- `--rm` removes the container after it finishes running  
-
-\- `-v ${PWD}/output:/output` mounts your local `output/` directory into the container  
-
-\- `password-auditor` is the image you built  
-
-
-
-When the container starts, you will see:
-
-
+You will be prompted:
 
 ```
-
 Auditing for a Secure Password
-
 Enter your username:
-
 Enter your password (HIDDEN):
-
 ```
-
-
 
 The password input is hidden for security.
 
+---
 
-
-\---
-
-
-
-\## \*\*6. Understanding the Password Rules\*\*
-
-
-
-The auditor checks the password against the following requirements:
-
-
-
-\- Length between \*\*8 and 14 characters\*\*
-
-\- Contains \*\*at least one uppercase\*\* letter
-
-\- Contains \*\*at least one lowercase\*\* letter
-
-\- Contains \*\*at least one digit\*\*
-
-\- Contains \*\*at least one special character\*\*
-
-\- Does \*\*not\*\* contain the username
-
-\- Does \*\*not\*\* contain \*\*5 or more consecutive letters\*\*
-
-\- Does \*\*not\*\* contain \*\*5 or more consecutive digits\*\*
-
-\- Does \*\*not\*\* repeat any character \*\*three or more times\*\* in a row
-
-
-
-If any rule fails, the password is marked \*\*WEAK\*\*.
-
-
-
-\---
-
-
-
-\## \*\*7. Viewing the HTML Report\*\*
-
-
+## **7. Viewing the Audit Report**
 
 After running the tool, open:
 
-
-
+```
+output/Password_Audit_Report.html
 ```
 
-output/password\_report.html
+Each audit entry includes:
 
-```
+- Username  
+- Argon2 hashed password  
+- Weak/Strong indicator  
+- List of failed requirements  
+- Timestamp of creation or update  
 
+The report automatically grows with each run.
 
+---
 
-Each entry in the report includes:
+## **8. Troubleshooting**
 
-
-
-\- Username  
-
-\- Argon2 hashed password  
-
-\- Weak/Strong indicator  
-
-\- List of failed requirements  
-
-\- Timestamp of creation or update  
-
-
-
-The report grows automatically with each audit.
-
-
-
-\---
-
-
-
-\## \*\*8. Troubleshooting\*\*
-
-
-
-\### \*\*Report not generated\*\*
-
+### **Report Not Generated**
 Ensure the volume mount is correct:
 
-
-
 ```bash
-
-\-v ${PWD}/output:/output
-
+-v ${PWD}/output:/output
 ```
 
+### **Permission Denied**
+Run your terminal as Administrator or ensure write access to the `output/` directory.
 
+### **Docker Build Completes Too Quickly**
+Docker may be using cached layers.  
+Force rebuild using:
 
-\### \*\*Permission denied\*\*
+```bash
+docker build --no-cache -t password-auditor ./scanner
+```
 
-Run your terminal as Administrator or ensure write access to the `output/` folder.
+### **Git Push Rejected**
+Pull remote changes first:
 
+```bash
+git pull origin main --allow-unrelated-histories
+```
 
+---
 
-\### \*\*Docker build fails\*\*
+## **9. Best Practices for Administrators**
 
-Verify that the Dockerfile is located inside the `/scanner` directory.
+- Use this tool during onboarding or password audits  
+- Store the HTML report securely  
+- Review weak passwords and enforce remediation  
+- Archive reports periodically  
+- Do not share hashed passwords publicly  
 
-
-
-\---
-
-
-
-\## \*\*9. Best Practices for Administrators\*\*
-
-
-
-\- Use this tool during onboarding or password audits  
-
-\- Store the HTML report in a secure location  
-
-\- Review weak passwords and enforce remediation  
-
-\- Rotate or archive reports periodically  
-
-\- Do not share hashed passwords publicly  
-
-
-
-\---
-
-
-
-\## \*\*10. Support\*\*
-
-
-
-For academic or project‑related questions, refer to your IT610 course instructor.  
-
-For Docker‑related issues, consult Docker’s official documentation.
-
-
-
-\---
-
+---
