@@ -112,7 +112,7 @@ You will be prompted for username and a hidden password input.
 
 ***
 
-## View Report
+## View Your HTML Report
 
 Open:
 
