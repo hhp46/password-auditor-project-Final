@@ -6,8 +6,8 @@
 
 ## Overview
 
-The Password Auditor checks password strength against several defined complexity rules based on NJ STATE SISM POLICY and generates an HTML report. It runs fully in Docker. 
-No Python installation required.
+The Password Auditor checks password strength against several defined complexity rules based on NJ STATE SISM POLICY which I have used and then generates an HTML report. It runs fully in Docker. 
+FYI... No additional Python installation is required.
 
 ## Requirements
 
