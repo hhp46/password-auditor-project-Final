@@ -99,7 +99,7 @@ def HTML_REPORT(username, hashed_password, requirement):
                     "<th style='text-align:center;'>Username</th>"
                     "<th style='text-align:center;'>Hashed Password</th>"
                     "<th style='text-align:center;'>Weak Password?</th>"
-                    "<th style='text-align:center;'>requirement Failing</th>"
+                    "<th style='text-align:center;'>Requirement Failing</th>"
                     "</tr>\n")
             f.write(row_html)
             f.write("</table></body></html>\n")
