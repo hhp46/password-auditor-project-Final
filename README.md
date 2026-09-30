@@ -49,6 +49,6 @@ The HTML report is automatically generated after the docker image is built and r
 
 # Author  
 **Harsh Patel**  
-IT610:851 – NJIT Course
+IT610:851 – NJIT
 
 ---
