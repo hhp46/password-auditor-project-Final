@@ -130,7 +130,7 @@ Check the volume mount:
 ```
 -v ${PWD}/output:/output
 ```
-### **Other commands to try if you get volume errors in powershell or windows cmd**
+### **Other commands to try if you get volume errors in PowerShell or CMD. Windows has different shells with different rules**
 
 ```
 docker run -it --entrypoint bash -v "${PWD}/output:/output" password-auditor
