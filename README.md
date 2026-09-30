@@ -1,7 +1,7 @@
 # Password Auditor – IT610 Midterm Project  
 
-**Harsh Patel**  
-IT610:851 – NJIT
+**Author:** Harsh Patel
+IT 610:851 – NJIT
 
 This is a password auditing tool using Docker that evaluates a end users account password strength, and generates an HTML report (based on the audit) for the end user to review.
 
@@ -48,8 +48,6 @@ Every time the docker is ran the results are added to the HTML report as a table
 The HTML report is automatically generated after the docker image is built and ran successfully.
 
 ---
-
-
 # Author  
 **Harsh Patel**  
 IT610:851 – NJIT
