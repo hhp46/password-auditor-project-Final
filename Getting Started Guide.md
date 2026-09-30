@@ -93,7 +93,7 @@ The report will be saved to `/output`.
 ---
 
 ## **Exit the Container**
-Inside the container:
+Inside the container enter:
 
 ```
 exit
@@ -129,7 +129,6 @@ Check the volume mount:
 
 ```
 -v ${PWD}/output:/output
-
 ```
 ### **Other commands to try if you get volume errors in powershell or windows cmd**
 
