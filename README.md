@@ -2,6 +2,7 @@
 
 - **Author:** Harsh Patel
 - IT 610:851 – NJIT
+- **Project:** Docker-Based Password Auditor
 
 ---
 
