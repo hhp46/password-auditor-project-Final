@@ -12,7 +12,7 @@ The user enter a username and password (which is hidden), and the tool:
 - Evaluates the password against strict complexity rules
 - Generates a HTML report to review the audit
   
-The entire application runs inside a **Docker container**, ensuring consistent behavior across environments.
+The entire application runs inside a **Docker container**.
 
 ---
 
