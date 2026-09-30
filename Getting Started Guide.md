@@ -129,8 +129,11 @@ Check the volume mount:
 
 ```
 -v ${PWD}/output:/output
+
+```
 OTHER COMMANDS TO TRY IF YOU GET VOLUME ERRORS IN POWERSHELL / WINDOWS CMD
 
+```
 docker run -it --entrypoint bash -v "${PWD}/output:/output" password-auditor
 docker run -it --entrypoint bash -v "$($PWD.Path)/output:/output" password-auditor
 docker run -it --entrypoint bash -v "%cd%/output:/output" password-auditor
