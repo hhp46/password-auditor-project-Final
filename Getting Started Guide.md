@@ -41,7 +41,7 @@ If Docker Desktop is not running, the build and run commands will fail.
 ---
 
 ## **Password Rules**
-A password is **valid** only if it meets all of the following:
+A password is considered **valid** only if it meets all of the following complexity requirements:
 
 - 8–14 characters  
 - At least one uppercase  
