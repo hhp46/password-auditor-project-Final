@@ -139,7 +139,7 @@ Make sure you run Docker commands from:
 path/to/password-auditor-project/scanner
 ```
 
-Make sure to run the commands from where the Dockerfile lives ( `/scanner` ).
+Make sure to run the commands from where the Dockerfile lives. For this project repo it's under `/scanner` .
 
 ---
 
