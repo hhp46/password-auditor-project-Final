@@ -134,13 +134,19 @@ def HTML_REPORT(username, hashed_password, requirement):
         font-size: 15px;
     }}
 
+    td:last-child,
+    th:last-child {{
+    border-right: none;
+    }}
+
     tr:nth-child(even) {{
-        background: #f2f6fc;
+    background: #f2f6fc;
     }}
 
     tr:hover {{
-        background: #e8f1ff;
+    background: #e8f1ff;
     }}
+    
 </style>
 
 </head>
