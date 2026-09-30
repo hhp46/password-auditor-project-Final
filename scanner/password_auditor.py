@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 REPORT_PATH = "/output/Password_Audit_Report.html"
 ph = PasswordHasher()
 
+
 # -----------------------------
 #  Password Evaluation RULES
 # -----------------------------
@@ -35,8 +36,9 @@ def evaluate_password(username, passwd):
     strong = len(requirement) == 0
     return strong, requirement
 
+
 # -----------------------------
-# Modern Clean HTML Styling
+# Password Column Styling 
 # -----------------------------
 def create_table_row(username, hashed_password, requirement):
     weak = "YES" if requirement else "NO"
@@ -64,7 +66,7 @@ def create_table_row(username, hashed_password, requirement):
 
 
 # -----------------------------
-# Modern Beautiful HTML Report
+# HTML Report Styling
 # -----------------------------
 def HTML_REPORT(username, hashed_password, requirement):
     timestamp = datetime.now(ZoneInfo("America/New_York")).strftime(
