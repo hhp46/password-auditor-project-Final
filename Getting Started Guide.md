@@ -136,7 +136,7 @@ docker build --no-cache -t password-auditor .
 Make sure you run Docker commands from:
 
 ```
-path/to/password-auditor-project
+path/to/password-auditor-project/scanner
 ```
 
 Make sure to run the commands from where the Dockerfile lives ( `/scanner` ).
