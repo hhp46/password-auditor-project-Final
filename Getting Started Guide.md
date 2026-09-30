@@ -68,7 +68,7 @@ docker build -t password-auditor .
 ```
 
 ```
-docker build --no-cache -t password-auditor . (RECOMMENDED COMMAND TO USE)
+docker build --no-cache -t password-auditor .    ------>> (RECOMMENDED COMMAND TO USE. DONT FORGET THE . AT THE END OF THE COMMAND)
 ```
 
 ---
