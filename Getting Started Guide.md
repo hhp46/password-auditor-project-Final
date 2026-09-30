@@ -81,7 +81,7 @@ docker run -it --entrypoint bash -v ${PWD}/output:/output password-auditor
 Run the auditor manually:
 
 ```
-python /scanner/password_auditor.py
+python password_auditor.py
 ```
 
 Enter your username and password when prompted.  
