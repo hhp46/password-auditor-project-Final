@@ -123,11 +123,13 @@ def HTML_REPORT(username, hashed_password, requirement):
         padding: 12px;
         text-align: center;
         font-size: 16px;
+        border-right: 1px solid #1f6fa5;
     }}
 
     td {{
         padding: 12px;
         border-bottom: 1px solid #e0e0e0;
+        border-right: 1px solid #d1d1d1;
         vertical-align: top;
         font-size: 15px;
     }}
