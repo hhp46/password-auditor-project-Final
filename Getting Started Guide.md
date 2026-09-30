@@ -112,7 +112,7 @@ The report includes:
 - Failed rules  
 - Timestamp  
 
-The file updates on each run. On the first run, a new HTML file is created.
+The report updates on each run. On the first run, a new report (HTML file) is created.
 
 ---
 
