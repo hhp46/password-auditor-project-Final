@@ -53,7 +53,7 @@ A password is **valid** only if it meets all of the following:
 
 ---
 
-## ** 1. Build the Docker Image**
+## **1. Build the Docker Image**
 
 Navigate into the folder containing the Dockerfile (inside `/scanner`):
 
