@@ -2,10 +2,8 @@
 # **GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT**
 
 - **Author:** Harsh Patel
-- **Course:** IT610:851 – NJIT **
-- **Project:** Docker-Based Password Auditor **
-- 8–14 characters  
-
+- **Course:** IT610:851 – NJIT
+- **Project:** Docker-Based Password Auditor
 ---
 
 ## **Overview**
