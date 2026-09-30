@@ -48,9 +48,7 @@ A password is **valid** only if it meets all of the following:
 - At least one lowercase  
 - At least one digit  
 - At least one special character  
-- Does **not** contain the username  
-- No 5+ consecutive letters  
-- No 5+ consecutive digits  
+- Does **not** contain the username
 - No character repeated 3+ times consecutively  
 
 ---
