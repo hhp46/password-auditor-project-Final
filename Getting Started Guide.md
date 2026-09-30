@@ -80,8 +80,8 @@ Run the auditor manually:
 python /scanner/password_auditor.py
 ```
 
-Enter your username and password when prompted.  
-The report will be saved to `/output` (mapped to your Windows folder).
+Enter your username and password when prompted.  Don't worry about entering your password on the prompt, it is HIDDEN. 
+The report will be saved to `/output`.
 
 ---
 
@@ -102,6 +102,7 @@ Open:
 ```
 output/Password_Audit_Report.html
 ```
+A  `/output` directory will be created when the image is run and the report will be automatically generated. 
 
 The report includes:
 
