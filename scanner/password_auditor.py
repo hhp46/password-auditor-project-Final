@@ -140,9 +140,9 @@ def main():
     HTML_REPORT(username, hashed, requirement)
 
     if not strong:
-        print("\nPassword is WEAK and must meet the complexity requirement. It is logged in the report.")
+        print("\nPassword is WEAK and must meet the complexity requirements. It is logged in the report.")
     else:
-        print("\nPassword meets the complexity requirement. It is logged in the report.")
+        print("\nPassword is STRONG and meets the complexity requirements. It is logged in the report.")
 
 
 if __name__ == "__main__":
