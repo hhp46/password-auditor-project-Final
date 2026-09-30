@@ -151,7 +151,7 @@ def HTML_REPORT(username, hashed_password, requirement):
     <th>Username</th>
     <th>Hashed Password</th>
     <th>Weak Password?</th>
-    <th>Requirement Failing</th>
+    <th>Requirements Failing</th>
 </tr>
 {row_html}
 </table>
