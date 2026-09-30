@@ -103,7 +103,7 @@ or press **Ctrl + D**.
 
 ---
 
-## **View Your HTML Report**
+## **4. View Your HTML Report**
 Open:
 
 ```
