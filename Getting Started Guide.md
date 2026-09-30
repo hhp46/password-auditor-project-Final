@@ -1,15 +1,15 @@
 
 # **GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT**
 
-**Author:** Harsh Patel  
-**Course:** IT610:851 – NJIT  
-**Project:** Docker-Based Password Auditor
+**Author:** Harsh Patel**  
+**Course:** IT610:851 – NJIT**  
+**Project:** Docker-Based Password Auditor**
 
 ---
 
 ## **Overview**
 The Password Auditor evaluates password strength using complexity rules based on the NJ State SISM Policy which I have implemented.  
-It generates an HTML report and runs entirely inside Docker — **no Python installation required**.
+It generates an HTML report and runs entirely inside Docker — no Python installation required.
 
 ---
 
@@ -29,16 +29,20 @@ password-auditor-project/
       ├── password_auditor.py
       └── output/                            (generated automatically)
             └── Password_Audit_Report.html   (generated automatically)
-
-
 ```
 
-The `output` directory and the HTML report will be generated automatically once the Docker image is built and run successfully inside the container.
+The output directory and the HTML report will be generated automatically once the Docker image is built and run successfully inside the container.
+
+---
+
+## **Before You Begin**
+Make sure **Docker Desktop is running** before you start.  
+If Docker Desktop is not running, the build and run commands will fail.
 
 ---
 
 ## **Password Rules**
-A password is **VALID** only if it meets *all* of the following:
+A password is **VALID** only if it meets all of the following:
 
 - 8–14 characters  
 - At least one uppercase  
@@ -67,7 +71,7 @@ docker build -t password-auditor .
 
 ---
 
-## **Run the Auditor *Inside* the Container**
+## **Run the Auditor Inside the Container**
 Start a shell inside the container and mount the output directory:
 
 ```
@@ -80,7 +84,8 @@ Run the auditor manually:
 python /scanner/password_auditor.py
 ```
 
-Enter your username and password when prompted.  Don't worry about entering your password on the prompt, it is HIDDEN. 
+Enter your username and password when prompted.  
+Your password input is **HIDDEN** for security.  
 The report will be saved to `/output`.
 
 ---
@@ -102,15 +107,16 @@ Open:
 ```
 output/Password_Audit_Report.html
 ```
+
 The report includes:
 
 - Username  
 - Argon2 hashed password  
 - Weak/Strong status  
 - Failed rules  
-- Timestamp  
+- Timestamp  (Updated on every run)
 
-The report updates on each run.
+The report updates on each run. Data for each run is put into a table.
 
 ---
 
@@ -137,7 +143,8 @@ Make sure you run Docker commands from:
 path/to/password-auditor-project/scanner
 ```
 
-Make sure to run the commands from where the Dockerfile lives. For this project repo, it's under `/scanner` .
+Make sure to run the commands from where the Dockerfile lives.  
+For this project repo, it's under `/scanner`.
 
 ---
 
