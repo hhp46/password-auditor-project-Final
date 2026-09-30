@@ -1,6 +1,6 @@
 # Password Auditor – IT610 Midterm Project  
 
-**Author:** Harsh Patel
+- **Author:** Harsh Patel
 - IT 610:851 – NJIT
 
 ---
