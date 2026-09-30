@@ -8,7 +8,7 @@
 
 ## **Overview**
 The Password Auditor evaluates password strength using complexity rules based on the NJ State SISM Policy which I have implemented.  
-It generates an HTML report and runs entirely inside Docker — no Python installation required.
+It generates an HTML report and runs entirely inside Docker so no additional Python installation required.
 
 ---
 
@@ -41,7 +41,7 @@ If Docker Desktop is not running, the build and run commands will fail.
 ---
 
 ## **Password Rules**
-A password is **VALID** only if it meets all of the following:
+A password is **valid** only if it meets all of the following:
 
 - 8–14 characters  
 - At least one uppercase  
@@ -67,7 +67,7 @@ Build the image:
 ```
 docker build -t password-auditor .
 
-docker build --no-cache -t password-auditor . (RECOMMENDED COMMAND TO USE)
+docker build --no-cache -t password-auditor .  **(RECOMMENDED COMMAND TO USE)**
 ```
 
 ---
