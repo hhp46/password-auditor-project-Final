@@ -73,7 +73,7 @@ docker build --no-cache -t password-auditor .
 
 ---
 
-## **Run the Auditor Inside the Container**
+## **Run the Auditor Inside the Container** ❗
 Start a shell inside the container and mount the output directory:
 
 ```
@@ -92,7 +92,7 @@ The report will be saved to `/output`.
 
 ---
 
-## **Exit the Container**
+## **Exit the Container** ❗
 Inside the container enter:
 
 ```
