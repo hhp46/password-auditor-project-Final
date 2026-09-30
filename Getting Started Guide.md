@@ -1,4 +1,3 @@
----
 
 # **GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT**
 
@@ -148,5 +147,3 @@ Make sure to run the commands from where the Dockerfile lives ( `/scanner` ).
 - Address weak passwords promptly  
 - Archive reports regularly  
 - Never share hashed passwords publicly  
-
----
