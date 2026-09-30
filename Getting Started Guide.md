@@ -35,7 +35,7 @@ The output directory and the HTML report will be generated automatically once th
 
 ---
 
-## **Before You Begin ❗❗**
+## **Before You Begin ❗**
 Make sure **Docker Desktop is running** before you start.  
 If Docker Desktop is not running, the build and run commands will fail.
 
