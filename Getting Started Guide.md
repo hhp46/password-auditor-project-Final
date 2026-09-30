@@ -33,7 +33,7 @@ password-auditor-project/
 
 ```
 
-The `output` directory and the HTML report are created automatically once the Docker image is built and run successfully.
+The `output` directory and the HTML report are created automatically once the Docker image is built and run successfully inside the container.
 
 ---
 
