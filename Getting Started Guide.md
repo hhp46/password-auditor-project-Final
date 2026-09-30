@@ -56,6 +56,7 @@ A password is **valid** only if it meets all of the following:
 ---
 
 ## **Build the Docker Image**
+
 Navigate into the folder containing the Dockerfile (inside `/scanner`):
 
 ```
@@ -67,7 +68,7 @@ Build the image:
 ```
 docker build -t password-auditor .
 
-docker build --no-cache -t password-auditor .  **(RECOMMENDED COMMAND TO USE)**
+docker build --no-cache -t password-auditor . *(RECOMMENDED COMMAND TO USE)*
 ```
 
 ---
