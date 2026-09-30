@@ -9,7 +9,7 @@
 # Overview
 
 This project provides a command‑line password auditing utility designed specifically for system administrators and end users using Docker. 
-The user enter a username and password **(which is hidden)**, and the tool:
+The user enters a username and a password **(which is hidden)**, and the tool:
 
 - Evaluates the password against strict complexity rules
 - Generates a HTML report to review the audit
@@ -36,7 +36,7 @@ password-auditor-project/
 The report is generated at: /output/Password_Audit_Report.html
 
 
-Every time the docker is ran the results are added to the HTML report as a table containing:
+Every time the docker is ran the results are added and updated to the HTML report as a table containing:
 
 - Username
 - Hashed Password
