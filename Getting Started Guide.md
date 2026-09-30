@@ -67,10 +67,10 @@ Build the image:
 
 ```
 docker build -t password-auditor .
+```
 
 ```
-```
-docker build --no-cache -t password-auditor . **RECOMMENDED COMMAND TO USE**
+docker build --no-cache -t password-auditor . (RECOMMENDED COMMAND TO USE)
 ```
 
 ---
