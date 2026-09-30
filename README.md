@@ -18,6 +18,7 @@ The entire application runs inside a **Docker container**.
 
 # Project Structure
 
+```
 password-auditor-project/
 │
 └── scanner/
@@ -25,7 +26,7 @@ password-auditor-project/
       ├── password_auditor.py
       └── output/                            (generated automatically)
             └── Password_Audit_Report.html   (generated automatically)
-
+```
 ---
 
 ## HTML Report
