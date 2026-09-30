@@ -1,141 +1,152 @@
-***
+---
 
-# GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT
+# **GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT**
 
 **Author:** Harsh Patel  
 **Course:** IT610:851 – NJIT  
 **Project:** Docker-Based Password Auditor
 
-***
+---
 
-## Overview
+## **Overview**
+The Password Auditor evaluates password strength using complexity rules based on the NJ State SISM Policy.  
+It generates an HTML report and runs entirely inside Docker — **no Python installation required**.
 
-The Password Auditor checks password strength against several defined complexity rules based on **NJ State SISM Policy** which I have used for the project, then generates an HTML report.  
-It runs fully in Docker — *no Python installation required.*
+---
 
-***
+## **Requirements**
+- Docker Desktop (Windows/macOS/Linux)  
+- Terminal / PowerShell access  
+- Permission to mount volumes  
 
-## Requirements
+---
 
-* Docker Desktop (Windows/macOS/Linux)
-* Terminal/Powershell access
-* Permission to mount volumes
-* Project structure:
-
+## **Project Structure**
+```
+password-auditor-project/
+│
+├── scanner/
+│     Dockerfile
+│     password_auditor.py
+│
+└── output/
+      Password_Audit_Report.html   (generated automatically)
 ```
 
+The `output` directory and the HTML report are created automatically once the Docker image is built and run successfully.
+
+---
+
+## **Password Rules**
+A password is **VALID** only if it meets *all* of the following:
+
+- 8–14 characters  
+- At least one uppercase  
+- At least one lowercase  
+- At least one digit  
+- At least one special character  
+- Does **not** contain the username  
+- No 5+ consecutive letters  
+- No 5+ consecutive digits  
+- No character repeated 3+ times consecutively  
+
+---
+
+## **Build the Docker Image**
+Navigate into the folder containing the Dockerfile (inside `/scanner`):
 
 ```
-
-The `output` directory and the `Password_Audit_Report.html` file will be automatically generated once the Docker image is built and ran successfully.
-
-***
-
-## Password Rules
-
-A password is **VALID** only if it meets **ALL** the requirements below:
-
-* 8–14 characters
-* At least one uppercase
-* At least one lowercase
-* At least one digit
-* At least one special character
-* Does **NOT** contain username
-* No 5+ consecutive letters
-* No 5+ consecutive digits
-* No character repeated 3+ times consecutively
-
-***
-
-## Build the Docker Image
-
-Navigate into the folder that contains the Dockerfile. In this case its inside the /scanner folder.
+cd path/to/password-auditor-project/scanner
 ```
-cd path/to/password-auditor-project/scanner    (CHANGE YOUR PATH ACCORDINGLY)
 
 Build the image:
+
+```
 docker build -t password-auditor .
 ```
 
+---
 
-***
-
-## Run the Auditor inside the container
+## **Run the Auditor *Inside* the Container**
+Start a shell inside the container and mount the output directory:
 
 ```
 docker run -it --entrypoint bash -v ${PWD}/output:/output password-auditor
-
 ```
 
-Once inside the container, run the auditor:
+Run the auditor manually:
 
+```
 python /scanner/password_auditor.py
+```
 
-Enter username/password when prompted
+Enter your username and password when prompted.  
+The report will be saved to `/output` (mapped to your Windows folder).
 
-Report will save to /output (mounted to your Windows folder)
+---
 
-
-Exit the container
-
-When you're done, exit the shell to stop the container.
-
+## **Exit the Container**
 Inside the container:
 
-Type exit or press Ctrl+D
+```
+exit
+```
 
+or press **Ctrl + D**.
 
-***
+---
 
-## View Your HTML Report
-
+## **View Your HTML Report**
 Open:
 
 ```
 output/Password_Audit_Report.html
 ```
 
-The report will include the following:
+The report includes:
 
-* Username
-* Argon2 hashed password
-* Weak/Strong status
-* Failed rules
-* Timestamp
+- Username  
+- Argon2 hashed password  
+- Weak/Strong status  
+- Failed rules  
+- Timestamp  
 
-The file updates on each run. On the first run, a new HTML file is generated.
+The file updates on each run. On the first run, a new HTML file is created.
 
-***
+---
 
-## Troubleshooting Tips
+## **Troubleshooting Tips**
 
+### **Report not generated**
+Check the volume mount:
 
-* **No report generated:** Check volume mount
-  ```
-  -v ${PWD}/output:/output
-  ```
+```
+-v ${PWD}/output:/output
+```
 
-* **Build too fast (cached)??:**
-  ```
-  docker build --no-cache -t password-auditor .
-  ```
-* **Things to remember:**
-  ```
-  Make sure your inside the correct working directory when running the Docker commands.
+### **Build running too fast (cached layers)**
+Force rebuild:
 
-  path/to/password-auditor-project
+```
+docker build --no-cache -t password-auditor .
+```
 
-  Do NOT run the commands from inside the scanner or output directory. It will NOT work. 
+### **Wrong working directory**
+Make sure you run Docker commands from:
 
-  ```
-***
+```
+path/to/password-auditor-project
+```
 
-## Best Practices
+Make sure to run the commands from where the Dockerfile lives ( `/scanner` ).
 
-* Use for onboarding user accounts and/or for periodic password audits
-* Store reports securely
-* Address weak passwords promptly
-* Archive reports regularly
-* Never share hashed passwords publicly
+---
 
-***
+## **Best Practices**
+- Use during onboarding or periodic password audits  
+- Store reports securely  
+- Address weak passwords promptly  
+- Archive reports regularly  
+- Never share hashed passwords publicly  
+
+---
