@@ -37,12 +37,6 @@ def evaluate_password(username, passwd):
     if user_lower in passwd_lower:
         requirement.append("Password cannot contain the username")
 
-    if re.search(r"[A-Za-z]{5,}", passwd):
-        requirement.append("Password cannot contain more than 4 consecutive letters")
-
-    if re.search(r"\d{5,}", passwd):
-        requirement.append("Password cannot contain more than 4 consecutive digits")
-
     if re.search(r"(.)\1\1", passwd):
         requirement.append("Password cannot contain a character repeated more than twice in a row")
 
