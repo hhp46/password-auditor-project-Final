@@ -42,7 +42,7 @@ Every time the docker is ran the results are added to the HTML report as a table
 - Failed Requirements
 
   
-The HTML report is automatically generated after the docker image is built and ran.
+The HTML report is automatically generated after the docker image is built and ran successfully.
 
 ---
 
