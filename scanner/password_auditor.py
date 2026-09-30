@@ -79,6 +79,7 @@ def HTML_REPORT(username, hashed_password, requirement):
     if not os.path.exists(REPORT_PATH):
         with open(REPORT_PATH, "w") as f:
             f.write(f"""
+
 <!DOCTYPE html>
 <html>
 <head>
