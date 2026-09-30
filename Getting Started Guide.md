@@ -61,14 +61,15 @@ Navigate into the folder containing the Dockerfile (inside `/scanner`):
 
 ```
 cd path/to/password-auditor-project/scanner
-
-docker build --no-cache -t password-auditor . (RECOMMENDED COMMAND TO USE)
 ```
 
 Build the image:
 
 ```
 docker build -t password-auditor .
+
+docker build --no-cache -t password-auditor . (RECOMMENDED COMMAND TO USE)
+
 ```
 
 ---
