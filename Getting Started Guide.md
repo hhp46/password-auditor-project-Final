@@ -24,12 +24,13 @@ It generates an HTML report and runs entirely inside Docker — **no Python inst
 ```
 password-auditor-project/
 │
-├── scanner/
-│     Dockerfile
-│     password_auditor.py
-│
-└── output/
-      Password_Audit_Report.html   (generated automatically)
+└── scanner/
+      ├── Dockerfile
+      ├── password_auditor.py
+      └── output/
+            └── Password_Audit_Report.html   (generated automatically)
+
+
 ```
 
 The `output` directory and the HTML report are created automatically once the Docker image is built and run successfully.
