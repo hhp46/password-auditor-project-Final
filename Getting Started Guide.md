@@ -53,7 +53,7 @@ A password is **valid** only if it meets all of the following:
 
 ---
 
-## **Build the Docker Image**
+## ** 1. Build the Docker Image**
 
 Navigate into the folder containing the Dockerfile (inside `/scanner`):
 
@@ -66,21 +66,21 @@ Build the image:
 ```
 docker build -t password-auditor .
 ```
-* Build the image using --no-cache: (Recommended to use -  Dont forget the . at the end of the command) ❗
+Build the image using --no-cache: (Recommended to use -  Dont forget the . at the end of the command) ❗
 ```
 docker build --no-cache -t password-auditor .
 ```
 
 ---
 
-## **Run the Auditor Inside the Container** ❗
-Start a shell inside the container and mount the output directory:
+## **2. Run the Auditor Inside the Container** ❗
+2.1 - Start a shell inside the container and mount the output directory:
 
 ```
 docker run -it --entrypoint bash -v ${PWD}/output:/output password-auditor
 ```
 
-Run the auditor manually:
+2.2 - Run the auditor manually:
 
 ```
 python password_auditor.py
@@ -92,7 +92,7 @@ The report will be saved to `/output`.
 
 ---
 
-## **Exit the Container** ❗
+## **3. Exit the Container** ❗
 Inside the container enter:
 
 ```
