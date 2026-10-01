@@ -36,7 +36,7 @@ The application runs entirely inside **Docker containers**, so you dont need to 
 
 Make sure **Docker Desktop is running** before you start.  
 If Docker Desktop is not running, the build and run commands will FAIL.
-* Run all commands from inside the project's root folder: **`C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL`** (where the docker-compose.yml file lives)
+* Run all commands from inside the project's root folder: **`../path/to/password-auditor-project-Final/`** (*You should be in the same folder where the docker-compose.yml file lives)
 
 ***
 
@@ -53,7 +53,7 @@ The password rules/requirements are the same as the MIDTERM PROJECT.
 #### Open PowerShell:
 
 ```
-cd path/to/password-auditor-project-FINAL
+cd path/to/password-auditor-project-Final 
 ```
 
 Replace `path/to/` with your Windows path where you cloned the project.
@@ -93,7 +93,7 @@ This hosts the report at: **`http://localhost:8080`**
 #### Navigate again:
 
 ```
-cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+cd ../path/to/password-auditor-project-Final/
 ```
 
 ***
@@ -183,7 +183,7 @@ docker-compose build --no-cache
 
 All commands must be executed from root of the project folder:
 ```
-C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+../path/to/password-auditor-project-Final/
 ```
 
 ***
