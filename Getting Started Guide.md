@@ -15,7 +15,7 @@ The Final Project is expanded from the original Password Auditor into a **multi�
 * **password\_scanner** – Python‑based password auditing engine
 * **password\_viewer** – NGINX web server that displays the generated audit report
 
-The auditor evaluates passwords using NJ State SISM Policy complexity rules and generates results to a shared `output/` directory.  
+The auditor evaluates passwords using NJ State SISM Policy complexity rules and generates results to a shared `/output` directory.  
 We are also able to view the HTML report at **`http://localhost:8080`**
 
 The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
