@@ -45,7 +45,7 @@ The `output/` directory is **outside** the scanner folder (NOT like the midterm 
 
 ## **HTML Report**
 
-The report is generated automatically under the /output directory as such: **output/Password_Audit_Report.html.**
+The report is generated automatically under the /output directory as such: **`output/Password_Audit_Report.html.`**
 
 
 Each time the scanner container is run, a new entry is added to the HTML table containing:
