@@ -22,7 +22,7 @@ The user enters a username and password **(which is hidden)**, and the tool:
 ## **Project Structure**
 
 ```
-password-auditor-project-FINAL/
+password-auditor-project-Final/
 │
 ├── docker-compose.yml
 │
