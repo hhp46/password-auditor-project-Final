@@ -39,7 +39,7 @@ password-auditor-project-FINAL/
     └── Dockerfile   (NGINX static hosting configuration)
 ```
 
-The `output/` directory is **outside** the scanner folder (NOT like the midterm structure) and shared between both containers.
+The `output/` directory is **outside** the scanner folder (NOT inside like the midterm structure) and shared between both containers.
 
 ***
 
