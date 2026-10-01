@@ -18,6 +18,8 @@ The Final Project is expanded from the original Password Auditor into a **multiâ
 The auditor evaluates passwords using NJ State SISM Policy complexity rules and writes results to a shared `output/` directory.  
 We are also able to view the HTML report at **`http://localhost:8080`**
 
+The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
+
 ***
 
 ## **Requirements**
