@@ -55,7 +55,8 @@ Both containers share this folder through Docker volumes.
 
 ## **Before You Begin ❗**
 
-* Make sure **Docker Desktop is running**
+Make sure **Docker Desktop is running** before you start.  
+If Docker Desktop is not running, the build and run commands will fail.
 * Run all commands from inside the project folder **`C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL`**
 
 ***
