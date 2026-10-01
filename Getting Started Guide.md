@@ -128,6 +128,9 @@ You will see a full HTML password audit report in a table that consists of:
 * Failed requirements
 * Timestamp
 
+EXAMPLE:
+<IMAGE>
+
 ***
 
 ## **7. Shut Down All Containers**
