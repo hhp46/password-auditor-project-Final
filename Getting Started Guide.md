@@ -1,165 +1,239 @@
+***
 
-# **GETTING STARTED GUIDE – PASSWORD AUDITOR PROJECT**
+# **GETTING STARTED GUIDE – PASSWORD AUDITOR FINAL PROJECT**
 
-- **Author:** Harsh Patel
-- **Course:** IT610:851 – NJIT
-- **Project:** Docker-Based Password Auditor
----
+* **Author:** Harsh Patel
+* **Course:** IT610:851 – NJIT
+* **Project:** Multi‑Container Docker Password Auditor (Scanner + Viewer)
+
+***
 
 ## **Overview**
-The Password Auditor evaluates password strength using complexity rules based on the NJ State SISM Policy which I have implemented.  
-It generates an HTML report and runs entirely inside Docker so no additional Python installation required.
 
----
+The Final Project is expanded from the original Password Auditor into a **multi‑container Docker Compose application** consisting of:
+
+* **password\_scanner** – Python‑based password auditing engine
+* **password\_viewer** – NGINX web server that displays the generated audit report
+
+The auditor evaluates passwords using NJ State SISM Policy complexity rules and writes results to a shared `output/` directory.  
+We are also able to view the HTML report at:
+
+```
+http://localhost:8080
+```
+
+***
 
 ## **Requirements**
-- Docker Desktop (Windows/macOS/Linux)  
-- Terminal / PowerShell access  
-- Permission to mount volumes  
 
----
+* Docker Desktop installed and running
+* Windows PowerShell
+* Docker Compose
+* Correct working directory
+
+***
 
 ## **Project Structure**
+
 ```
-password-auditor-project/
+password-auditor-project-FINAL/
 │
-└── scanner/
-      ├── Dockerfile
-      ├── password_auditor.py
-      └── output/                            (generated automatically)
-            └── Password_Audit_Report.html   (generated automatically)
+├── docker-compose.yml
+│
+├── scanner/
+│   ├── Dockerfile
+│   ├── password_auditor.py
+│
+├── output/
+│   └── Password_Audit_Report.html   (generated automatically)
+│
+└── viewer/
+    └── Dockerfile   (NGINX config + static hosting)
 ```
 
-The output directory and the HTML report will be generated automatically once the Docker image is built and run successfully inside the container.
+**Important:❗**  
+The `output/` directory is **outside** the `scanner/` folder NOT inside it like the Midterm Project.  
+Both containers share this folder through Docker volumes.
 
----
+***
 
 ## **Before You Begin ❗**
-Make sure **Docker Desktop is running** before you start.  
-If Docker Desktop is not running, the build and run commands will fail.
 
----
+* Make sure **Docker Desktop is running**
+* Run all commands from inside the project folder:
+  ```
+  C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+  ```
+
+***
 
 ## **Password Rules**
-A password is considered **valid** only if it meets all of the following complexity requirements:
 
-- 8–14 characters  
-- At least one uppercase  
-- At least one lowercase  
-- At least one digit  
-- At least one special character  
-- Does **not** contain the username
-- No character repeated 3+ times consecutively  
+A password is considered **valid** only if it meets *all* of the following:
 
----
+* 8–14 characters
+* At least one uppercase
+* At least one lowercase
+* At least one digit
+* At least one special character
+* Does **not** contain the username
+* No character repeated 3+ times consecutively
 
-## **1. Build the Docker Image**
+***
 
-Navigate into the folder containing the Dockerfile (inside `/scanner`):
+# **1. Navigate to the Project Directory**
 
-```
-cd path/to/password-auditor-project/scanner
-```
-
-Build the image:
+Open PowerShell:
 
 ```
-docker build -t password-auditor .
-```
-Build the image using --no-cache: (Recommended to use -  Dont forget the . at the end of the command) ❗
-```
-docker build --no-cache -t password-auditor .
+cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
 ```
 
----
+Replace `<USERNAME>` with your Windows username if your using PowerShell.
 
-## **2. Run the Auditor Inside the Container** ❗
-2.1 - Start a shell inside the container and mount the output directory:
+***
 
-```
-docker run -it --entrypoint bash -v ${PWD}/output:/output password-auditor
-```
-
-2.2 - Run the auditor manually:
+# **2. Build All Containers**
 
 ```
-python password_auditor.py
+docker-compose build
 ```
 
-Enter your username and password when prompted.  
-Your password input is **HIDDEN** for security.  
-The report will be saved to `/output`.
+This builds:
 
----
+* `password_scanner` (Python)
+* `password_viewer` (NGINX)
 
-## **3. Exit the Container** ❗
-Inside the container enter:
+***
+
+# **3. Start the Viewer (NGINX)**
+
+**Run this in its own PowerShell window.**
 
 ```
-exit
+docker-compose up password_viewer
 ```
 
-or press **Ctrl + D**.
+This hosts the report at:
 
----
+```
+http://localhost:8080
+```
 
-## **4. View Your HTML Report**
-Open:
+**Leave this window running.**
+
+***
+
+# **4. Open a NEW PowerShell Window**
+
+Navigate again:
+
+```
+cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+```
+
+***
+
+# **5. Run the Scanner Container**
+
+```
+docker-compose run --rm password_scanner
+```
+
+This launches the Python auditor and prompts you for:
+
+**Username:**
+AND 
+**Password (hidden):**
+
+
+The scanner will generate the HTML report to:
 
 ```
 output/Password_Audit_Report.html
 ```
 
-The report includes:
+***
 
-- Username  
-- Argon2 hashed password  
-- Weak/Strong status  
-- Failed rules  
-- Timestamp  (Updated on every run)
+# **6. View the Report on a browser**
 
-The report updates on each run. Data for each run is put into a table.
-
----
-
-## **Troubleshooting Tips**
-
-### **Report not generated?**
-Check the volume mount:
+Open your browser and go to:
 
 ```
--v ${PWD}/output:/output
-```
-### **Other commands to try if you get volume errors in PowerShell or CMD. Windows has different shells with different rules**
-
-```
-docker run -it --entrypoint bash -v "${PWD}/output:/output" password-auditor
-docker run -it --entrypoint bash -v "$($PWD.Path)/output:/output" password-auditor
-docker run -it --entrypoint bash -v "%cd%/output:/output" password-auditor
+http://localhost:8080
 ```
 
-### **Build running too fast (cached layers)**
+You will see a full HTML password audit report in a table that consists of:
+
+* Username
+* Argon2 hashed password
+* Weak/Strong status
+* Failed requirements
+* Timestamp
+
+***
+
+# **7. Shut Down All Containers**
+
+In the viewer window, stop NGINX:
+
+```
+CTRL + C
+```
+
+Then remove all containers and networks:
+
+```
+docker-compose down
+```
+
+***
+
+# **Troubleshooting**
+
+### Viewer shows blank page
+
+Make sure the viewer is running:
+```
+docker-compose up password_viewer
+```
+
+### Report not generating
+
+Run the scanner again:
+```
+docker-compose run --rm password_scanner
+```
+
+### No report appearing in browser
+
+Ensure the shared folder exists inside the project folder:
+```
+output/
+```
+
+### Build issues or cached layers
+
 Force rebuild:
-
 ```
-docker build --no-cache -t password-auditor .
-```
-
-### **Wrong working directory**
-Make sure you run Docker commands from:
-
-```
-path/to/password-auditor-project/scanner
+docker-compose build --no-cache
 ```
 
-Make sure to run the commands from where the Dockerfile lives.  
-For this project repo, it's under `/scanner`.
+### Wrong directory
 
----
+All commands must be executed from root of the project folder:
+```
+C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+```
+
+***
 
 ## **Best Practices**
-- Use during onboarding or periodic password audits  
-- Store reports securely  
-- Address weak passwords promptly  
-- Archive reports regularly  
-- Never share hashed passwords publicly  
+
+* Use for periodic password audits or employee onboarding
+* Store reports securely
+* Address weak passwords quickly
+* Archive HTML reports regularly
+* Never expose Argon2 password hashes publicly
+
+***
