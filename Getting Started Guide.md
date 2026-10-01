@@ -142,9 +142,9 @@ docker-compose run --rm password_scanner
 
 This launches the Python auditor and prompts you for:
 
-**Username:**
+**Username**
 AND 
-**Password (hidden):**
+**Password (hidden)**
 
 
 The scanner will generate the HTML report to:
