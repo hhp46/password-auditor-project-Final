@@ -186,6 +186,7 @@ All commands must be executed from root of the project folder:
 ../path/to/password-auditor-project-Final/
 ```
 
+Mistakenly DON'T be inside the /scanner, /viewer or /output directories, or the commands will FAIL.
 ***
 
 ## **Best Practices**
