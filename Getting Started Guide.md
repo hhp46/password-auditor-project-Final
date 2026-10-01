@@ -15,7 +15,7 @@ The Final Project is expanded from the original Password Auditor into a **multi�
 * **password\_scanner** – Python‑based password auditing engine
 * **password\_viewer** – NGINX web server that displays the generated audit report
 
-The auditor evaluates passwords using NJ State SISM Policy complexity rules and writes results to a shared `output/` directory.  
+The auditor evaluates passwords using NJ State SISM Policy complexity rules and generates results to a shared `output/` directory.  
 We are also able to view the HTML report at **`http://localhost:8080`**
 
 The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
@@ -50,7 +50,7 @@ password-auditor-project-FINAL/
 ```
 
 **Important:❗**  
-The `output/` directory is **outside** the `scanner/` folder NOT inside it like the Midterm Project.  
+The `/output` directory is **outside** the `/scanner` folder NOT inside it like the Midterm Project.  
 Both containers share this folder through Docker volumes.
 
 ***
@@ -58,15 +58,17 @@ Both containers share this folder through Docker volumes.
 ## **Before You Begin ❗**
 
 Make sure **Docker Desktop is running** before you start.  
-If Docker Desktop is not running, the build and run commands will fail.
-* Run all commands from inside the project folder **`C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL`**
+If Docker Desktop is not running, the build and run commands will FAIL.
+* Run all commands from inside the project's root folder: **`C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL`** (where the docker-compose.yml file lives)
 
 ***
 
 ## **Password Rules**
 
-The password rules/requirements are the same as the MIDTERM.
+The password rules/requirements are the same as the MIDTERM PROJECT.
 
+***
+# STEPS
 ***
 
 # **1. Navigate to the Project Directory**
