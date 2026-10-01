@@ -16,11 +16,7 @@ The Final Project is expanded from the original Password Auditor into a **multi�
 * **password\_viewer** – NGINX web server that displays the generated audit report
 
 The auditor evaluates passwords using NJ State SISM Policy complexity rules and writes results to a shared `output/` directory.  
-We are also able to view the HTML report at:
-
-```
-http://localhost:8080
-```
+We are also able to view the HTML report at **`http://localhost:8080`**
 
 ***
 
@@ -60,24 +56,13 @@ Both containers share this folder through Docker volumes.
 ## **Before You Begin ❗**
 
 * Make sure **Docker Desktop is running**
-* Run all commands from inside the project folder:
-  ```
-  C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
-  ```
+* Run all commands from inside the project folder **`C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL`**
 
 ***
 
 ## **Password Rules**
 
-A password is considered **valid** only if it meets *all* of the following:
-
-* 8–14 characters
-* At least one uppercase
-* At least one lowercase
-* At least one digit
-* At least one special character
-* Does **not** contain the username
-* No character repeated 3+ times consecutively
+The password rules/requirements are the same as the MIDTERM.
 
 ***
 
@@ -114,11 +99,8 @@ This builds:
 docker-compose up password_viewer
 ```
 
-This hosts the report at:
+This hosts the report at: **`http://localhost:8080`**
 
-```
-http://localhost:8080
-```
 
 **Leave this window running.**
 
