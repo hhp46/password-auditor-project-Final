@@ -47,7 +47,7 @@ Both containers share this folder through Docker volumes.
 
 ## **HTML Report**
 
-The report is generated automatically at: **`../output/Password_Audit_Report.html.`**
+The report is generated automatically as: **`../output/Password_Audit_Report.html.`**
 
 
 Each time the scanner container is run, a new entry is added to the HTML table containing:
