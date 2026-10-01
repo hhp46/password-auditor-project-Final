@@ -129,11 +129,7 @@ AND
 **Password (hidden)**
 
 
-The scanner will generate the HTML report to:
-
-```
-output/Password_Audit_Report.html
-```
+The scanner will generate the HTML report to: **`output/Password_Audit_Report.html `**
 
 ***
 
