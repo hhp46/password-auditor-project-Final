@@ -34,7 +34,9 @@ password-auditor-project-FINAL/
 │   └── Password_Audit_Report.html   (generated automatically)
 │
 └── viewer/
-    └── Dockerfile   (NGINX static hosting configuration)
+│   ├── default.conf
+│   ├── Dockerfile   (NGINX static hosting configuration)
+│
 ```
 
 The `output/` directory is **outside** the scanner folder (NOT inside like the midterm structure) and shared between both containers.
