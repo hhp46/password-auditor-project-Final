@@ -29,25 +29,6 @@ The application runs entirely inside **Docker containers**, so you dont need to 
 * Docker Compose
 * Correct working directory
 
-***
-
-## **Project Structure**
-
-```
-password-auditor-project-FINAL/
-│
-├── docker-compose.yml
-│
-├── scanner/
-│   ├── Dockerfile
-│   ├── password_auditor.py
-│
-├── output/
-│   └── Password_Audit_Report.html   (generated automatically)
-│
-└── viewer/
-    └── Dockerfile   (NGINX config + static hosting)
-```
 
 ***
 
