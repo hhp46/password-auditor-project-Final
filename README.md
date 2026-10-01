@@ -56,7 +56,7 @@ Each time the scanner container is run, a new entry is added to the HTML table c
 * Failed Requirements
 * Timestamp
 
-The report updates dynamically and is hosted live through the viewer container at: **`http://localhost:8080`**
+❗ The report updates dynamically and is hosted live through the viewer container at: **`http://localhost:8080`**
 
 ***
 
