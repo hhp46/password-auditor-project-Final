@@ -17,8 +17,6 @@ The user enters a username and password **(which is hidden)**, and the tool:
 2. Generates a full HTML report
 3. Hosts the report in a live web viewer at: **`http://localhost:8080`**
 
-The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
-
 ***
 
 ## **Project Structure**
