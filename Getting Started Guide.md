@@ -76,10 +76,10 @@ The password rules/requirements are the same as the MIDTERM PROJECT.
 Open PowerShell:
 
 ```
-cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
+cd path/to/password-auditor-project-FINAL
 ```
 
-Replace `<USERNAME>` with your Windows username if your using PowerShell.
+Replace `path/to/` with your Windows path where you cloned the project.
 
 ***
 
