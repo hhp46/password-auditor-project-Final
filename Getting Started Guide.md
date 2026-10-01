@@ -127,14 +127,11 @@ cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
 docker-compose run --rm password_scanner
 ```
 
-This launches the Python auditor and prompts you for:
+Enter your username and password when prompted.  
 
-**Username**
-AND 
-**Password (hidden)**
+Your password input is **HIDDEN** for security.  
 
-
-The scanner will generate the HTML report to: **`output/Password_Audit_Report.html `**
+The report will be saved to **`../output/Password_Audit_Report.html`**.
 
 ***
 
