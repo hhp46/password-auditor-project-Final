@@ -39,7 +39,9 @@ password-auditor-project-Final/
 │
 ```
 
-The `output/` directory is **outside** the scanner folder (NOT inside like the midterm structure) and shared between both containers.
+**Important:❗**  
+The `/output` directory is **outside** the `/scanner` folder NOT inside it like the Midterm Project.  
+Both containers share this folder through Docker volumes.
 
 ***
 
