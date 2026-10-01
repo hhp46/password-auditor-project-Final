@@ -73,7 +73,7 @@ The password rules/requirements are the same as the MIDTERM PROJECT.
 
 ## **1. Navigate to the Project Directory**
 
-Open PowerShell:
+#### Open PowerShell:
 
 ```
 cd path/to/password-auditor-project-FINAL
@@ -113,7 +113,7 @@ This hosts the report at: **`http://localhost:8080`**
 
 ## **4. Open a NEW PowerShell Window**
 
-Navigate again:
+#### Navigate again:
 
 ```
 cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
@@ -137,7 +137,7 @@ The report will be saved to **`../output/Password_Audit_Report.html`**.
 
 ## **6. View the Report on a browser**
 
-Open your browser and go to:
+#### Open your browser and go to:
 
 ```
 http://localhost:8080
@@ -155,13 +155,13 @@ You will see a full HTML password audit report in a table that consists of:
 
 ## **7. Shut Down All Containers**
 
-(7.1) In the viewer window, stop NGINX:
+#### (7.1) In the viewer window, stop NGINX:
 
 ```
 CTRL + C
 ```
 
-(7.2) Then remove all containers and networks:
+#### (7.2) Then remove all containers and networks:
 
 ```
 docker-compose down
