@@ -49,10 +49,6 @@ password-auditor-project-FINAL/
     └── Dockerfile   (NGINX config + static hosting)
 ```
 
-**Important:❗**  
-The `/output` directory is **outside** the `/scanner` folder NOT inside it like the Midterm Project.  
-Both containers share this folder through Docker volumes.
-
 ***
 
 ## **Before You Begin ❗**
