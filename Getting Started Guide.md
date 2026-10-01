@@ -71,7 +71,7 @@ The password rules/requirements are the same as the MIDTERM PROJECT.
 # STEPS
 ***
 
-# **1. Navigate to the Project Directory**
+## **1. Navigate to the Project Directory**
 
 Open PowerShell:
 
@@ -83,7 +83,7 @@ Replace `<USERNAME>` with your Windows username if your using PowerShell.
 
 ***
 
-# **2. Build All Containers**
+## **2. Build All Containers**
 
 ```
 docker-compose build
@@ -96,7 +96,7 @@ This builds:
 
 ***
 
-# **3. Start the Viewer (NGINX)**
+## **3. Start the Viewer (NGINX)**
 
 **Run this in its own PowerShell window.**
 
@@ -111,7 +111,7 @@ This hosts the report at: **`http://localhost:8080`**
 
 ***
 
-# **4. Open a NEW PowerShell Window**
+## **4. Open a NEW PowerShell Window**
 
 Navigate again:
 
@@ -121,7 +121,7 @@ cd C:\Users\<USERNAME>\Desktop\password-auditor-project-FINAL
 
 ***
 
-# **5. Run the Scanner Container**
+## **5. Run the Scanner Container**
 
 ```
 docker-compose run --rm password_scanner
@@ -138,7 +138,7 @@ The scanner will generate the HTML report to: **`output/Password_Audit_Report.ht
 
 ***
 
-# **6. View the Report on a browser**
+## **6. View the Report on a browser**
 
 Open your browser and go to:
 
@@ -156,7 +156,7 @@ You will see a full HTML password audit report in a table that consists of:
 
 ***
 
-# **7. Shut Down All Containers**
+## **7. Shut Down All Containers**
 
 In the viewer window, stop NGINX:
 
@@ -172,37 +172,37 @@ docker-compose down
 
 ***
 
-# **8. Troubleshooting**
+## **8. Troubleshooting**
 
-### (8.1) Viewer shows blank page
+#### (8.1) Viewer shows blank page
 
 Make sure the viewer is running:
 ```
 docker-compose up password_viewer
 ```
 
-### (8.2) Report not generating
+#### (8.2) Report not generating
 
 Run the scanner again:
 ```
 docker-compose run --rm password_scanner
 ```
 
-### (8.3) No report appearing in browser
+#### (8.3) No report appearing in browser
 
 Ensure the shared folder exists inside the project folder:
 ```
 output/
 ```
 
-### (8.4) Build issues or cached layers
+#### (8.4) Build issues or cached layers
 
 Force rebuild:
 ```
 docker-compose build --no-cache
 ```
 
-### (8.5) Wrong directory
+#### (8.5) Wrong directory
 
 All commands must be executed from root of the project folder:
 ```
