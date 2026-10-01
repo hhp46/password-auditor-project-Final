@@ -167,37 +167,37 @@ docker-compose down
 
 ***
 
-# **Troubleshooting**
+# **8. Troubleshooting**
 
-### Viewer shows blank page
+### 8.1 Viewer shows blank page
 
 Make sure the viewer is running:
 ```
 docker-compose up password_viewer
 ```
 
-### Report not generating
+### 8.2 Report not generating
 
 Run the scanner again:
 ```
 docker-compose run --rm password_scanner
 ```
 
-### No report appearing in browser
+### 8.3 No report appearing in browser
 
 Ensure the shared folder exists inside the project folder:
 ```
 output/
 ```
 
-### Build issues or cached layers
+### 8.4 Build issues or cached layers
 
 Force rebuild:
 ```
 docker-compose build --no-cache
 ```
 
-### Wrong directory
+### 8.5 Wrong directory
 
 All commands must be executed from root of the project folder:
 ```
