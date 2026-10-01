@@ -1,27 +1,28 @@
-# Python cache
+# Ignore Python cache files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Virtual environments
+# Ignore virtual environments (in case one is created)
 venv/
 env/
-.venv/
 
-# Output reports
-scanner/output/
+# Ignore Docker metadata
+*.log
+docker-compose.override.yml
 
-# OS junk
+# Ignore system files
 .DS_Store
 Thumbs.db
 
-# IDE/editor settings
+# Ignore IDE/editor settings
 .vscode/
 .idea/
 
-# Logs
-*.log
+# Ignore output logs or temporary files
+output/*.html
+output/*.txt
 
-# Docker leftovers
-docker-data/
+# BUT keep the output directory itself
+!output/.gitkeep
