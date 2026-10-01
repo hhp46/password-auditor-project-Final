@@ -11,7 +11,7 @@
 ## **Overview**
 
 This Final Project expands the midterm password auditing tool into a **multi‑container Docker Compose application**.  
-The user enters a username and password **(password entry is hidden)**, and the system:
+The user enters a username and password **(which is hidden)**, and the tool:
 
 1. Evaluates the password against strict complexity rules
 2. Generates a full HTML report
@@ -45,7 +45,7 @@ The `output/` directory is **outside** the scanner folder (NOT inside like the m
 
 ## **HTML Report**
 
-The report is generated automatically under the /output directory as such: **`output/Password_Audit_Report.html.`**
+The report is generated automatically at: **`output/Password_Audit_Report.html.`** under the /output directory
 
 
 Each time the scanner container is run, a new entry is added to the HTML table containing:
