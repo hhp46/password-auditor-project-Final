@@ -155,13 +155,13 @@ You will see a full HTML password audit report in a table that consists of:
 
 ## **7. Shut Down All Containers**
 
-In the viewer window, stop NGINX:
+(7.1) In the viewer window, stop NGINX:
 
 ```
 CTRL + C
 ```
 
-Then remove all containers and networks:
+(7.2) Then remove all containers and networks:
 
 ```
 docker-compose down
