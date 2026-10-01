@@ -1,54 +1,72 @@
-# Password Auditor – IT610 Midterm Project  
+***
 
-- **Author:** Harsh Patel
-- IT 610:851 – NJIT
-- **Project:** Docker-Based Password Auditor
+# **Password Auditor – IT610 Final Project**
 
----
+* **Author:** Harsh Patel
+* **Course:** IT 610:851 – NJIT
+* **Project:** Multi‑Container Docker Password Auditor (Scanner + Viewer)
 
-# Overview
+***
 
-This project provides a command‑line password auditing utility designed specifically for system administrators and end users using Docker. 
-The user enters a username and a password **(which is hidden)**, and the tool:
+## **Overview**
 
-- Evaluates the password against strict complexity rules
-- Generates a HTML report to review the audit
-  
-The entire application runs inside a **Docker container**.
+This Final Project expands the midterm password auditing tool into a **multi‑container Docker Compose application**.  
+The user enters a username and password **(password entry is hidden)**, and the system:
 
----
+1. Evaluates the password against strict complexity rules
+2. Generates a full HTML report
+3. Hosts the report in a live web viewer at **`http://localhost:8080`**
 
-# Project Structure
+The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
+
+***
+
+## **Project Structure**
 
 ```
-password-auditor-project/
+password-auditor-project-FINAL/
 │
-└── scanner/
-      ├── Dockerfile
-      ├── password_auditor.py
-      └── output/                            (generated automatically)
-            └── Password_Audit_Report.html   (generated automatically)
+├── docker-compose.yml
+│
+├── scanner/
+│   ├── Dockerfile
+│   ├── password_auditor.py
+│
+├── output/
+│   └── Password_Audit_Report.html   (generated automatically)
+│
+└── viewer/
+    └── Dockerfile   (NGINX static hosting configuration)
 ```
----
 
-## HTML Report
+The `output/` directory is **outside** the scanner folder (NOT like the midterm structure) and shared between both containers.
 
-The report is generated at: /output/Password_Audit_Report.html
+***
+
+## **HTML Report**
+
+The report is generated automatically under the /output directory as such: **output/Password_Audit_Report.html.**
 
 
-Every time the docker is ran the results are added and updated to the HTML report as a table containing:
+Each time the scanner container is run, a new entry is added to the HTML table containing:
 
-- Username
-- Hashed Password
-- Weak Password? (YES/NO)
-- Failed Requirements
+* Username
+* Hashed Password (Argon2)
+* Weak Password? (YES/NO)
+* Failed Requirements
+* Timestamp
 
-  
-The HTML report is automatically generated after the docker image is built and ran successfully.
+The report updates dynamically and is hosted live through the viewer container at:
 
----
-# Author  
+```
+http://localhost:8080
+```
+
+***
+
+## **Author**
+
 **Harsh Patel**  
-IT610:851 – NJIT
+IT 610:851 – NJIT
 
----
+***
