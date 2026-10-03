@@ -28,6 +28,7 @@ The application runs entirely inside **Docker containers**, so you dont need to 
 * Windows PowerShell
 * Docker Compose
 * Correct working directory
+* Git clone this project repo
 
 
 ***
