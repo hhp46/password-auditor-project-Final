@@ -121,10 +121,10 @@ EXAMPLE:
 
 ## **6. Shut Down All Containers**
 
-#### (6.1) In the terminal window stop the running command by:
+#### (6.1) In the first terminal window stop the running command by:
 
 ```
-CTRL + C
+CTRL + C OR pressing d
 ```
 
 #### (6.2) Stop and remove all containers:
@@ -132,6 +132,7 @@ CTRL + C
 ```
 docker-compose down
 ```
+Use `docker ps` to check if all containers are stopped. 
 
 ***
 
