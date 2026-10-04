@@ -62,7 +62,7 @@ Each time the scanner container is run, a new entry is added to the HTML table c
 
 ***
 ## **❗ Note:** 
-Use the Getting Started Guide.md file to walkthrough the project. 
+Use the `Getting Started Guide.md` file to walkthrough the project. 
 
 ***
 
