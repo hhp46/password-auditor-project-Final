@@ -74,8 +74,8 @@ This builds:
 
 ***
 
-## **3. Open a NEW PowerShell Window**
-
+## **3. Open a another (NEW) PowerShell Window**
+NOTE: Keep the first terminal OPEN while you open a new PowerShell Window!
 #### Navigate again:
 
 ```
@@ -124,11 +124,11 @@ EXAMPLE:
 #### (6.1) In the first terminal window stop the running command by:
 
 ```
-CTRL + C OR pressing d
+Pressing d on the keyboard
 ```
 
 #### (6.2) Stop and remove all containers:
-
+On the second terminal run  the following command...
 ```
 docker-compose down
 ```
