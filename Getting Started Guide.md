@@ -61,10 +61,10 @@ Replace `path/to/` with your Windows path where you cloned the project.
 
 ***
 
-## **2. Build All Containers**
+## **2. Build the Containers**
 
 ```
-docker-compose build
+docker-compose up --build
 ```
 
 This builds:
@@ -74,22 +74,7 @@ This builds:
 
 ***
 
-## **3. Start the Viewer (NGINX)**
-
-**Run this in its own PowerShell window.**
-
-```
-docker-compose up password_viewer
-```
-
-This hosts the report at: **`http://localhost:8080`**
-
-
-**Leave this window running.**
-
-***
-
-## **4. Open a NEW PowerShell Window**
+## **3. Open a NEW PowerShell Window**
 
 #### Navigate again:
 
@@ -99,7 +84,7 @@ cd ../path/to/password-auditor-project-Final/
 
 ***
 
-## **5. Run the Scanner Container**
+## **4. Run the Scanner Container**
 
 ```
 docker-compose run --rm password_scanner
@@ -113,7 +98,7 @@ The report will be saved to **`../output/Password_Audit_Report.html`**.
 
 ***
 
-## **6. View the Report on a browser**
+## **5. View the Report on a browser**
 
 #### Open your browser and go to:
 
@@ -134,15 +119,15 @@ EXAMPLE:
 
 ***
 
-## **7. Shut Down All Containers**
+## **6. Shut Down All Containers**
 
-#### (7.1) In the terminal window stop the running command by:
+#### (6.1) In the terminal window stop the running command by:
 
 ```
 CTRL + C
 ```
 
-#### (7.2) Stop and remove all containers:
+#### (6.2) Stop and remove all containers:
 
 ```
 docker-compose down
@@ -150,37 +135,37 @@ docker-compose down
 
 ***
 
-## **8. Troubleshooting**
+## **7. Troubleshooting**
 
-#### (8.1) Viewer shows blank page
+#### (7.1) Viewer shows blank page
 
 Make sure the viewer is running:
 ```
 docker-compose up password_viewer
 ```
 
-#### (8.2) Report not generating
+#### (7.2) Report not generating
 
 Run the scanner again:
 ```
 docker-compose run --rm password_scanner
 ```
 
-#### (8.3) No report appearing in browser
+#### (7.3) No report appearing in browser
 
 Ensure the shared folder exists inside the project folder:
 ```
 output/
 ```
 
-#### (8.4) Build issues or cached layers
+#### (7.4) Build issues or cached layers
 
 Force rebuild:
 ```
 docker-compose build --no-cache
 ```
 
-#### (8.5) Wrong directory
+#### (7.5) Wrong directory
 
 All commands must be executed from root of the project folder:
 ```
