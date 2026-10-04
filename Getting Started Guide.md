@@ -136,13 +136,13 @@ EXAMPLE:
 
 ## **7. Shut Down All Containers**
 
-#### (7.1) In the viewer window, stop NGINX:
+#### (7.1) In the terminal window stop the running command by:
 
 ```
 CTRL + C
 ```
 
-#### (7.2) Then remove all containers and networks:
+#### (7.2) Stop and remove all containers:
 
 ```
 docker-compose down
