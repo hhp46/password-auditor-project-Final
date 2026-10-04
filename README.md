@@ -61,6 +61,10 @@ Each time the scanner container is run, a new entry is added to the HTML table c
 ❗ The report updates dynamically and is hosted live through the viewer container at: **`http://localhost:8080`**
 
 ***
+## **Note:** 
+Use the Getting Started Guide.md file to walkthrough the project. 
+
+***
 
 ## **Author**
 
