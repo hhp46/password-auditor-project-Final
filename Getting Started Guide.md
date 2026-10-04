@@ -121,11 +121,8 @@ EXAMPLE:
 
 ## **6. Shut Down All Containers**
 
-#### (6.1) In the first terminal window stop the running command by:
+##### (6.1) In the first terminal window `press d` on the keyboard to return to your terminal.
 
-```
-Pressing d on the keyboard
-```
 
 #### (6.2) Stop and remove all containers:
 On the second terminal run  the following command...
