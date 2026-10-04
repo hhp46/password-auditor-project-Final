@@ -6,7 +6,8 @@ services:
     build: ./scanner
     container_name: password_scanner
     volumes:
-      - ./output:/output
+      - C:/Users/Harsh/Desktop/password-auditor-project-Final/output:/output
+# - ./output:/output
     stdin_open: true
     tty: true
 
@@ -16,4 +17,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./output:/usr/share/nginx/html
+      - C:/Users/Harsh/Desktop/password-auditor-project-Final/output:/usr/share/nginx/html
+# - ./output:/usr/share/nginx/html
