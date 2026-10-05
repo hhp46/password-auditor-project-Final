@@ -169,6 +169,11 @@ def HTML_REPORT(username, hashed_password, requirement):
 </html>
             """)
 
+        
+# -----------------------------
+# Message on screen after audit is complete
+# -----------------------------
+        
         print(f"\nNew report created: {REPORT_PATH}")
         return
 
@@ -207,6 +212,10 @@ def main():
 
     HTML_REPORT(username, hashed, requirement)
 
+# -----------------------------
+# Message on screen after audit is complete and report is generated
+# -----------------------------
+    
     if not strong:
         print("\nPassword is WEAK and must meet the complexity requirements. It is logged in the report.")
     else:
