@@ -12,8 +12,8 @@
 
 The Final Project is expanded from the original Password Auditor into a **multi‑container Docker Compose application** consisting of:
 
-* **password\_scanner** – Python‑based password auditing engine
-* **password\_viewer** – NGINX web server that displays the generated audit report
+* **password\_scanner** – Python based password auditing tool
+* **password\_viewer** – web server that displays the generated report
 
 The auditor evaluates passwords using NJ State SISM Policy complexity rules and generates results to a shared `/output` directory.  
 We are also able to view the HTML report at **`http://localhost:8080`**
@@ -170,14 +170,4 @@ All commands must be executed from root of the project folder:
 ```
 
 Mistakenly DON'T be inside the /scanner, /viewer or /output directories, or the commands will FAIL.
-***
-
-## **Best Practices**
-
-* Use for periodic password audits or employee onboarding
-* Store reports securely
-* Address weak passwords quickly
-* Archive HTML reports regularly
-* Never expose Argon2 password hashes publicly
-
 ***
