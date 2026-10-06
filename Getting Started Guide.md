@@ -69,8 +69,8 @@ docker-compose up --build
 
 This builds:
 
-* `password_scanner` (Python)
-* `password_viewer` (NGINX)
+* `password_scanner` 
+* `password_viewer`
 
 ***
 
