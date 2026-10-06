@@ -109,7 +109,7 @@ http://localhost:8080
 You will see a full HTML password audit report in a table that consists of:
 
 * Username
-* Argon2 hashed password
+* Hashed password
 * Weak/Strong status
 * Failed requirements
 * Timestamp
