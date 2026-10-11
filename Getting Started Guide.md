@@ -2,26 +2,6 @@
 
 # **GETTING STARTED GUIDE – PASSWORD AUDITOR FINAL PROJECT**
 
-* **Author:** Harsh Patel
-* **Course:** IT610:851 – NJIT
-* **Project:** Multi‑Container Docker Password Auditor (Scanner + Viewer)
-
-***
-
-## **Overview**
-
-The Final Project is expanded from the original Password Auditor into a **multi‑container Docker Compose application** consisting of:
-
-* **password\_scanner** – Python based password auditing tool
-* **password\_viewer** – web server that displays the generated report
-
-The auditor evaluates passwords using NJ State SISM Policy complexity rules and generates results to a shared `/output` directory.  
-We are also able to view the HTML report at **`http://localhost:8080`**
-
-The application runs entirely inside **Docker containers**, so you dont need to install Python or NGINX locally.
-
-***
-
 ## **Requirements**
 
 * Docker Desktop installed and running
@@ -29,7 +9,6 @@ The application runs entirely inside **Docker containers**, so you dont need to 
 * Docker Compose
 * Correct working directory
 * Git clone this project repo
-
 
 ***
 
